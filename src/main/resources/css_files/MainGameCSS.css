@@ -1,0 +1,53 @@
+.root{
+    -fx-background-image: url("../resources/backgrounds/cloud_background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1920 1080;
+    -fx-background-position: center center;
+}
+
+.label{
+    -fx-font-family: 'High Tower Text';
+    -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);
+    -fx-font-size: 30;
+}
+
+.button{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 32;
+    -fx-pref-height: 75;
+    -fx-pref-width: 222;
+}
+
+.button:hover{
+    -fx-cursor: pointer;
+    -fx-text-fill: black;
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}
+
+HBox{
+    -fx-pref-height: -1;
+    -fx-pref-width: -1;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-style: solid;
+    -fx-font-family: 'High Tower Text';
+}
+
+Pane{
+    -fx-background-color: rgba(96, 96, 96, .6);
+}
+
+.choice-box{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-font-family: 'High Tower Text';
+    -fx-text-alignment: center;
+}
+
+.choice-box:hover{
+    -fx-cursor: pointer;
+    -fx-text-fill: black;
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}

@@ -1,0 +1,18 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+[*]-->PlayApprenticeCardState
+PlayApprenticeCardState-->PlayApprenticeCardState : PlayApprenticeCard, InvalidCommand
+PlayApprenticeCardState-->PlaceTokensState : PlayApprenticeCard
+PlaceTokensState-->PlaceTokensState : MoveTokenToIsland, MoveToStudyHall, InvalidCommand
+PlaceTokensState-->MoveMotherNatureState : MoveTokenToIsland, MoveToStudyHall
+MoveMotherNatureState-->MoveMotherNatureState : InvalidCommand
+MoveMotherNatureState-->[*] : MoveMotherNature
+MoveMotherNatureState-->PickCloudState : MoveMotherNature
+PickCloudState-->PickCloudState : InvalidCommand
+PickCloudState-->PlaceTokensState : PickCloud
+PickCloudState-->PlayApprenticeCardState : PickCloud
+PickCloudState-->[*] : PickCloud
+
+@enduml

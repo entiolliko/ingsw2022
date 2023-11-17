@@ -1,0 +1,354 @@
+
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+package visitor{
+
+interface VisitorCommand {
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+    -gameEnded() : void
+}
+
+}
+
+
+package Controller {
+class Match {
+        -state : State
+        +sendCommand(playerVisitorCommand) : void
+    }
+
+}
+
+package Model {
+
+
+package Tokens{
+enum TowerEnum{
+
+    White
+    Black
+    Grey
+    missing # to allow squad computing
+
+}
+
+enum MNEnum{
+
+    Present
+    Missing
+    FakeMN
+
+}
+
+enum TokenEnum{
+
+    Yellow
+    Blue
+    Green
+    Red
+    Violet
+
+}
+}
+
+
+package StateMachine{
+
+
+    abstract class State {
+        -game : Game
+        -allowedCommands : Set<String>
+
+        -orderedPlayers : List<String>
+        -currentPlayer : int
+
+        + State(Game, List<String> players) : State
+        + run(playerVisitorCommand) : State
+        - allows(playerVisitorCommand) : boolean
+        # abs next(playerVisitorCommand) : State
+    }
+
+    class PlayApprenticeCardState extends State{
+        +next(playerVisitorCommand) : State
+    }
+    class PlaceTokensState extends State{
+        -placedTokens : int
+
+        +next(playerVisitorCommand) : State
+    }
+    class MoveMotherNatureState extends State{
+        +next(playerVisitorCommand) : State
+    }
+    class PickACloudState extends State{
+        +next(playerVisitorCommand) : State
+    }
+}
+
+interface Visitable{
+    +accept(VisitorCommand concreteVisitor) throws ReloadGameException : void
+}
+
+class Game implements Visitable{
+
+    -board : Board
+    -playersID : List<String>
+    -currentState : State
+    -id : String
+    -currentPlayer : Player
+
+    +Game(List<String> PlayerID, List<String> magicians, List<String> squadNames)
+    +showGameState() : Map<String,String>
+    +accept(VisitorCommand concreteVisitor) throws ReloadGameException : void
+    +getBoard() : Board
+
+}
+
+class Board implements Visitable{
+
+    -clouds : final List<Clouds>
+    -islands : final IslandsChain
+    -dashBoards : final List<DashBoard>
+    -cardHandler : CardHandler
+    -bag: final TokenCollection
+    -professors : Professors
+    -winner : String
+
+    +Board(List<String> PlayerID, List<String> magicians, List<String> squadNames): void
+    +accept(Visitor concreteVisitor) throws ReloadGameException : void
+    +getClouds() : final List<Clouds>
+    +getIslands() : final IslandsChain
+    +getDashBoards() : final List<DashBoard>
+    +getCardHandler() : CardHandler
+    +getBag(): final TokenCollection
+    +getProfessors() : Professors
+    +getWinner() : String
+    +setWinner() : void
+
+    -gameEnded() : Boolean
+}
+
+
+class DashBoard{
+
+    -ID : String
+    -Magician : String
+    -Team : final String
+    -EntranceHall : final TokenCollection
+    -StudyHall : final TokenCollection
+    -Coins : Integer
+
+    +Dashboard(string playerID, string Magician, String TeamName)
+    +accept(VisitorCommand concreteVisitor)
+    +getStudyHall() : TokenCollection
+    +getEntranceHall() : TokenCollection
+    +getTowerColor() : TokenEnum
+    +getCoins() : Integer
+    +addCoins(Integer coins) : void
+    +moveToStudyHall(TokenCollection toMove) : void
+    +moveToEntranceHall(TokenCollection toMove) : void
+    +removeFromEntranceHall(TokenCollection toMove) throw Exception : void
+    +equals(Object toCompare) : Boolean
+}
+
+class InfluenceHandler{
+    -BonusTeam : String
+    -BonusValue : Integer
+    -OfflineProfessors : final List<TokenEnum>
+    -OfflineTowers : Boolean
+
+    +InfluenceHandler()
+    +winner() : String squad
+    +addBonus(String team, Integer amount) : void
+    +shutDownProfessor(TokenEnum) : void
+    +shutDownTowers() : void
+    +prepareForNextTurn() : void
+}
+
+
+class Professors{
+    ~owners: Map<TokenEnum, String>
+    ~playerWithBonus : String
+
+    +Professors()
+    +getOwners() : Map<TokenEnum, String>
+    +getOwner() : TokenEnum
+    +prepareForNextTurn() : void
+    +setPlayerWithBonus(String playerID) : void
+    +updateProfessorStatus(Map<String, TokenCollection> dashBoardsStatus)
+    +copy() : Professors
+}
+
+
+class Cloud{
+
+    -Size : Integer
+    -collection : TokenCollection
+
+    +Constructor(Integer size) : Cloud
+    +addTokens(tokensTOAdd : TokenCollection) : Void
+    +removeTokens() : TokenCollection
+}
+
+class IslandsChain{
+    -startingNumberOfTowersPerPlayer = HashMap<Integer, Integer>
+    - Islands : CircularList<Island>
+    - squadTowers : Map<String team, Integer towerNum>
+
+    +IslandsChain(List<String> teams)
+    +moveMotherNature(Integer amount)
+    +computeInfluence(Map<TokenEnum color, String team> professorMap, Map<String team, Integer amount> bonuses): TowerEnum
+    +setTower(TowerEnum towerColor)
+    +addToken(Integer Island, TokenCollection toAdd)
+    +mergeIslands() : void
+    +getCurrentIslandsTokenCollection(): TokenCollection
+}
+
+class Team{
+    -final name : String
+    -towerColour : TowerEnum
+    -numberOfTowers : IntegerStack
+
+    +Team(String name, List<String> players, TowerEnum towerColour, int numberOfTowers) : void
+    +getPlayers() : List<String>
+    +getTowerColour() : TowerEnum
+    +getNumberOfTowers() : Integer
+    +addTowers(Integer) : void
+    +takeTowers(Integer) : void
+}
+
+class Island {
+    -final tokens : TokenCollection
+    -size : Integer
+    -towerColour : TowerEnum
+    -motherNatureStatus: MNEnum
+
+    +newEmptyIsland() : Island
+    +copy() : Island
+    +add(TokenCollection toAdd) : void
+    +getMotherNatureStatus() : MotherNatureEnum
+    +setMotherNatureStatus(MotherNatureEnum motherNatureStatus) : void
+    +changeTowerColour(TowerEnum towerColour) : void
+    +getSize() : Integer
+    +getTower() : TowerEnum
+    +getTokens() : TokenCollection
+    +inject(Island) : void
+    +equals(Object) : boolean
+}
+
+package CustomDataStructures{
+class TokenCollection {
+
+    - final HashMap<TokenEnum, IntegerStack> content;
+
+    - TokenCollection()
+    + static newEmptyCollection() : TokenCollection
+    + static createCollection(HashMap<TokenEnum, Integer> input) throws NegativeInputException, NullPointerException : TokenCollection
+    + static newDefaultBag() : TokenCollection
+    + randomPop(int amount) throws NegativeAmountException, NegativeInputException : TokenCollection
+    + addTokens(TokenEnum colour, int amount) throws NegativeInputException : void
+    + get(TokenEnum colour) : int
+    + popToken(TokenEnum colour, int amount) throws NegativeAmountException, NegativeInputException : TokenCollection
+    + addToCollection(TokenCollection toAdd) : void
+    + copy() : TokenCollection
+    + equals(Object o) : boolean
+    + hashCode() : int
+    - addAllContentFrom(TokenCollection toAdd) throws NegativeInputException : void
+    - nonEmptyBuckets() : Set<TokenEnum>
+}
+
+class IntegerStack{
+
+    - int amount;
+
+    + IntegerStack(int amount) throws NegativeAmountException
+    + IntegerStack() throws NegativeAmountException
+    + isEmpty() : boolean
+    + decreaseBy(int toReduce) throws NegativeAmountException, NegativeInputException : void
+    + equals(Object o) : boolean
+    + hashCode() : int
+}
+
+}
+
+package CharacterCard {
+interface CharacterCard{
+  setupCard(): void
+  playCard(Map<String, Object> args): void
+}
+
+class cardExample1{
+  - tokens : TokenCollection
+
+  setupCard(): void
+  playCard(Map<String, Object> args): void
+}
+}
+package CardHandler {
+
+class CardHandler{
+  -playersOnTheTable: Map<String, PlayerCards>
+
+  +CardHandler(List<String> playersID)2
+  +playCard(string playerID, integer cardID) throws IllegalApprenticeCardException, AlreadyPlayedCardException, OutOfBoundIntegerCardException: void
+  +lastPlayedCard(string playerID): ApprenticeCard
+  +prepareForNextTurn() : void
+}
+
+class PlayerCards{
+  ~playerID: String
+  ~availableCards: List<ApprenticeCards>
+  ~playedCards: Stack<ApprenticeCards>
+  ~hasPlayedCard: Boolean
+
+  +PlayerCards(String playerID, List<ApprenticeCard> availableCards) : void
+  +static createApprenticeCards() : List<ApprenticeCard>
+  +playCard(Integer cardID) throws AlreadyPlayedCardException,OutOfBoundIntegerCardException :void
+  +getLastCard(): ApprenticeCard
+  +hasPlayedCard(): Boolean
+  +prepareForNextTurn(): void
+  +getPlayedCards() : List<ApprenticeCard>
+  +getAvailableCards() : List<ApprenticeCard>
+}
+
+class Struct\nApprenticeCard{
+  +cardID: Integer
+  +orderValue: Integer
+  +movementValue: Integer
+
+  + ApprenticeCard(Integer cardID, Integer orderValue, Integer movementValue)
+}
+}
+}
+
+
+Board "1" o-- "2..4" Cloud
+DashBoard "1" -- "2" TokenCollection
+Cloud -- TokenCollection
+Board "1" o-- "2..4" DashBoard
+Game "1" -- "1" Board
+Board "1" -- "1" IslandsChain
+Island "3..12" --o "1" IslandsChain
+Island "1" -- "1" TokenCollection
+CharacterCard  <|--  cardExample1
+TokenCollection --> IntegerStack
+
+Board o-- CardHandler
+Board o-- CharacterCard
+CardHandler *-- PlayerCards
+
+PlayerCards  o-- Struct\nApprenticeCard
+
+IslandsChain o-- Team
+
+Board -- Professors
+Board -- InfluenceHandler
+VisitorCommand --> Visitable : use
+
+State o-- Game
+Match o-- State
+
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+interface it.polimi.ingsw.controller.communication_protocol.ClientAcceptor {
+~ void accept(ServerResponse)
+~ void serverWelcome(Set<String>,Set<String>)
+~ void lobbyJoined(String,Set<String>)
+~ void lobbyStandby(String,Map<String,ConnectionStatusEnum>)
+~ void gameStatus(GameDTO,List<GameEvent>)
+~ void disconnected(String)
+~ void error(String)
+~ void lobbiesStatus(Set<String>,Set<String>)
+}
+@enduml

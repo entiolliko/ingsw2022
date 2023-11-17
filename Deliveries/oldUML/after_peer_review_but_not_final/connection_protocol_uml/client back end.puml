@@ -1,0 +1,48 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+class it.polimi.ingsw.client.backend.ClientPingSender {
+- Connector connector
+# void timeTick()
+}
+class it.polimi.ingsw.client.backend.ClientPingTimer {
+- Connector connector
+# void explode()
+}
+class it.polimi.ingsw.client.backend.DefaultConnector {
+- Gson serializer
+- Gson deserializer
+- Socket socket
+- ClientPingSender clientPingSender
+- ClientPingTimer clientPingTimer
+- Scanner in
+- PrintWriter out
+- ExecutorService listenThread
++ void connectToServer(String,int)
++ void disconnect()
++ void disconnect(ServerResponse)
+- void closePreviousConnection()
+- void resetListenerThread()
+- void listen()
+- void listenThreaded()
+- boolean wasDisconnectedRequest(ServerResponse)
+- ServerResponse receivedMessage()
++ void sendRequest(ClientRequest)
+}
+abstract class it.polimi.ingsw.client.backend.Connector {
+- Set<ClientAcceptor> observers
++ void addObserver(ClientAcceptor)
++ void removeObserver(ClientAcceptor)
++ {abstract}void connectToServer(String,int)
++ {abstract}void disconnect()
++ {abstract}void disconnect(ServerResponse)
+# void updateAll(ServerResponse)
++ {abstract}void sendRequest(ClientRequest)
+}
+
+
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.client.backend.ClientPingSender
+it.polimi.ingsw.controller.ping_protocol.TimeBomb <|-- it.polimi.ingsw.client.backend.ClientPingTimer
+it.polimi.ingsw.client.backend.Connector <|-- it.polimi.ingsw.client.backend.DefaultConnector
+@enduml

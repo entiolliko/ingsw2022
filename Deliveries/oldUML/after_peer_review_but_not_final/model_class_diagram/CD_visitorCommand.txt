@@ -1,0 +1,113 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+package visitor{
+
+interface VisitorCommand {
+    +default visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+    -gameEnded() : void
+}
+
+package base_commands{
+
+class GameEnded implements VisitorCommand {
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+
+class FillClouds implements VisitorCommand{
+
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+
+
+class PrepareForNextTurn implements VisitorCommand {
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+
+
+
+}
+
+package PlayerVisitorCommands {
+interface PlayerVisitorCommand extends VisitorCommand {
+    +getPlayer() : String
+}
+class MoveToStudyHall implements PlayerVisitorCommand{
+    -PlayerID : String
+    -toMove : TokenCollection
+
+    MoveToStudyHall(String playerID, TokenCollection toMove)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+class MoveToIsland implements PlayerVisitorCommand{
+    -PlayerID : String
+    -toMove : TokenCollection
+    -islandIndex : Integer
+
+    MoveToIsland(String playerID, TokenEnum toMove, Integer islandIndex)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+class PickCloud implements PlayerVisitorCommand{
+    -playerID : String
+    -cloudID : Integer
+
+    PickCloud(String playerID, Integer cloudID)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+
+class MoveMotherNature implements PlayerVisitorCommand{
+    -amount : Integer
+    -playerID : String
+
+    +MoveMotherNature(Integer amount, String playerID)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) : void trows ReloadGameException
+}
+class PlayApprenticeCard implements PlayerVisitorCommand{
+    -player : String
+    -cardID : Integer
+
+    +PlayApprenticeCard(String player, Integer cardID)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+class PlayCharacterCard implements PlayerVisitorCommand {
+    -player : String
+    -cardID : Integer
+
+    +PlayCharacterCard(String player, Integer cardID)
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+
+
+
+}
+
+
+package character_cards {
+interface CharacterCardVisitorCommand extends VisitorCommand {
+}
+class playCharacterCardCommand implements VisitorCommand {
+    -playerID : String
+    -cardName : String
+    -ToActivate : TokenEnum
+    -islandIndex : int
+    -tokensToAdd: TokenCollection
+    -tokensToRemove : TokenCollection	
+
+    +visit(Game) throws ReloadGameException : void
+    +visit(Board) throws ReloadGameException : void
+}
+}
+
+}
+@enduml

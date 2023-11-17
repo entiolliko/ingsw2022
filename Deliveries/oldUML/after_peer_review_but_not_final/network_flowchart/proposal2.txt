@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+
+interface PlayerVisitorCommand {
+}
+
+class Server implements Runnable, Visitable{
+    -lobby : ConcurrentHashMap<String, Lobby>
+    -matches : ConcurrentHashMap<String, Match>
+
+    +main() : void
+
+}
+class Connection implements Runnable{
+    socket : Socket
+}
+interface Runnable
+interface Visitable
+class Lobby implements Runnable, Visitable
+class Match implements Runnable, Visitable
+abstract class State
+
+Server -- Connection
+Lobby *-- Connection
+Server o-- Lobby
+Server o-- Match
+Connection --> PlayerVisitorCommand : uses
+Match *-- Connection
+
+Server --> PlayerVisitorCommand : uses
+Match --> PlayerVisitorCommand : uses
+Lobby --> PlayerVisitorCommand : uses
+Client --> PlayerVisitorCommand : use
+Client --> Connection::socket : use
+
+Match *-- State
+
+@enduml

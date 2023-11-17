@@ -1,0 +1,28 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+actor Player as pl
+participant Client as cl
+participant Controller as cn
+
+participant State as st
+participant Game as gm
+participant Board as bd
+participant PlayApprenticeCard as pac
+participant CardHandler as ch
+
+
+pl-->cl : play card
+cl-->pac : create
+cl-->cn : send json command
+cn-->st : State.run(command)
+group VisitorPattern
+    st-->gm : Game.accept(command)
+    gm-->pac : PlayApprenticeCard.visit(game)
+    pac-->bd : game.getBoard().accept(command)
+    bd-->pac : PlayApprenticeCard.visit(board)
+end
+pac-->ch : CardHandler.playCard(player, cardValue)
+
+@enduml

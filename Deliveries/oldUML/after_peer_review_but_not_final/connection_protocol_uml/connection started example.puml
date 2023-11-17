@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+class Server {
+#limbo : Set
+}
+class Lobby {
+#players : Map<String, Connection>
+}
+class Connection {
+}
+Server -- Lobby
+Server::limbo -- Connection
+@enduml

@@ -1,0 +1,12 @@
+.root{
+    -fx-background-image: url("../resources/backgrounds/Background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1920 1080;
+    -fx-background-position: center center;
+}
+
+.label{
+    -fx-font-size: 50;
+    -fx-text-fill: #15ffff;
+    -fx-font-family: 'High Tower Text';
+}

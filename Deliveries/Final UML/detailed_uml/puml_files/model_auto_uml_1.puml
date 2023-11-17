@@ -1,0 +1,451 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 2
+skinparam linetype polyline
+!include skin.puml
+
+class it.polimi.ingsw.model.visitor.base_commands.FillClouds {
++ void visit(Board)
+}
+class it.polimi.ingsw.model.character_cards.Card7 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.islands.exceptions.ConflictingTowersException {
+}
+class it.polimi.ingsw.model.character_cards.Card1 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ boolean equals(Object)
++ String toString()
++ int hashCode()
++ String getClassName()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.visitor.base_commands.PrepareForNextTurn {
++ void visit(Board)
+}
+class it.polimi.ingsw.model.Professors {
++ Map<TokenEnum,String> getOwners()
++ String getOwner(TokenEnum)
++ Professors copy()
++ void prepareForNextRound()
++ void prepareForNextTurn()
++ void setPlayerWithBonus(String)
++ void updateProfessors(Map<String,DashBoard>)
++ void updateProfessorStatus(Map<String,TokenCollection>)
++ boolean equals(Object)
++ int hashCode()
++ String toString()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.InfluenceHandler {
++ void addBonus(String,Integer)
++ void shutDownProfessor(TokenEnum)
++ void shutDownTowers()
++ void prepareForNextRound()
++ void prepareForNextTurn()
++ String winner(IslandChain,Professors)
+# Map<String,IntegerStack> getScores(IslandChain,Professors)
+}
+abstract class it.polimi.ingsw.model.state.ActionPhaseState {
+}
+class it.polimi.ingsw.model.state.PickACloudState {
+# State nextState(PlayerVisitorCommand)
+}
+class it.polimi.ingsw.model.state.GameOverState {
+# State nextState(PlayerVisitorCommand)
++ boolean isOver()
+}
+class it.polimi.ingsw.model.character_cards.Card11 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ void flushParams(int,TokenCollection,TokenCollection)
++ String toString()
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.Game {
++ String getCurrentState()
++ void setCurrentState(String)
++ String getCurrentPlayer()
++ void setCurrentPlayer(String)
++ void accept(VisitorCommand)
++ String getGameID()
++ void setGameID(String)
++ Board getGameBoard()
++ List<String> getOrderedPlayers()
++ List<String> getPlayersClockwise()
++ TypeOfGame getTypeOfGame()
++ void setIsGoingToBeOver()
++ boolean isGoingToBeOver()
++ boolean instantGameOverCondition()
++ List<String> getLeads()
++ String getClassName()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
++ GameDTO getDTO()
++ void addEventObserver(GameEventReceiver)
++ Set<GameEventReceiver> popReceivers()
+}
+class it.polimi.ingsw.model.dashboard.exceptions.IllegalApprenticeCardException {
+}
+class it.polimi.ingsw.model.character_cards.Card6 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.islands.IslandChain {
++ {static} IslandChain newDefaultIslandChain(Map<String,List<String>>)
++ Integer numberOfTowersForThisGame(Map<String,List<String>>)
++ Integer numberOfTowersForThisGame()
++ int numberOfIslands()
+# int findMotherNatureType(MotherNatureEnum)
++ void moveMotherNature(int)
++ void addTempMotherNature(int)
++ void addTokens(TokenCollection,int)
++ void addToken(TokenEnum,int)
++ TokenCollection getIslandTokens(int)
+# void changeIslandTowers(int,TowerEnum)
++ void changeCurrentIslandTowersWithThoseOfTheWinner(String)
+# Optional<Team> accessTeamOf(String)
++ Optional<Team> getTeamOf(String)
+# Optional<Team> ownerOfTowers(TowerEnum)
++ void mergeIslands()
++ int getCurrMotherNaturePos()
++ List<Team> getTeamsCopy()
++ Optional<Team> ownerOfTowersCopy(TowerEnum)
++ Island getCurrentIslandCopy()
++ boolean gameOverCondition()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+# List<Team> accessTeams()
+# Optional<Team> accessTeam(String)
++ Island accessIsland(int)
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.character_cards.Card9 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall {
++ void visit(Board)
++ String getPlayerID()
++ boolean equals(Object)
++ int hashCode()
+}
+enum it.polimi.ingsw.model.islands.MotherNatureEnum {
++  PRESENT
++  ABSENT
++  TEMP
++ {static} MotherNatureEnum max(MotherNatureEnum,MotherNatureEnum)
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud {
++ void visit(Board)
++ String getPlayerID()
++ boolean equals(Object)
++ int hashCode()
+}
+abstract class it.polimi.ingsw.model.state.State {
+# {static} String getNameOfCommand(VisitorCommand)
++ State run(PlayerVisitorCommand)
+# boolean allows(PlayerVisitorCommand)
+# {abstract}State nextState(PlayerVisitorCommand)
+# Set<String> getAllowedCommands()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
++ String getCurrentPlayer()
++ Game getGame()
++ void setGame(Game)
++ boolean isOver()
+}
+class it.polimi.ingsw.model.ModelEventCreator {
++ Set<GameEventReceiver> popReceivers()
++ void addEventObserver(GameEventReceiver)
++ void notifyObservers(GameEvent)
+}
+class it.polimi.ingsw.model.state.MoveMotherNatureState {
+# State nextState(PlayerVisitorCommand)
+}
+class it.polimi.ingsw.model.visitor.base_commands.MoveToEntranceHall {
++ void visit(Board)
++ String getPlayerID()
+}
+interface it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand {
+~ String getPlayerID()
+~ String toString()
+}
+class it.polimi.ingsw.model.islands.Island {
++ {static} Island newEmptyIsland()
+# {static} Island createIsland(int,TowerEnum,MotherNatureEnum,TokenCollection)
++ Island copy()
++ void changeTowerColour(TowerEnum)
++ int getSize()
++ TowerEnum getTower()
++ MotherNatureEnum getMotherNatureStatus()
++ void setMotherNatureStatus(MotherNatureEnum)
++ TokenCollection getTokens()
++ void inject(Island)
++ void addTokens(TokenCollection)
++ void addToken(TokenEnum)
++ void setTowerColour(TowerEnum)
++ boolean isMergeableWith(Island)
++ boolean equals(Object)
++ int hashCode()
++ IslandDTO getDTO(int)
+}
+class it.polimi.ingsw.model.state.PlaceTokensState {
+# State nextState(PlayerVisitorCommand)
+}
+class it.polimi.ingsw.model.dashboard.exceptions.OutOfBoundIntegerCardException {
+}
+class it.polimi.ingsw.model.visitor.serialize_command.ExportToJson {
++ void visit(State)
+}
+class it.polimi.ingsw.model.character_cards.Card4 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ boolean equals(Object)
++ int hashCode()
++ String getClassName()
++ String toString()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.state.PlayApprenticeCardState {
+# State nextState(PlayerVisitorCommand)
++ boolean equals(Object)
+}
+class it.polimi.ingsw.model.cardhandler.CardHandler {
++ void playCard(String,Integer)
+~ Boolean canPlayCard(String,Integer)
++ String getWinningPlayer()
++ void prepareForNextRound()
++ void prepareForNextTurn()
++ ApprenticeCard lastPlayedCard(String)
++ int lastPlayedCardMovement(String)
++ boolean equals(Object)
++ int hashCode()
++ String toString()
++ String getFirstPlayerToMove()
++ void setBonusReceiver(String)
++ List<String> getOrderedPlayers()
++ List<PlayerCards> showPlayedCards()
++ void fillDTO(GameDTO)
++ boolean gameOverCondition()
+}
+class it.polimi.ingsw.model.dashboard.DashBoard {
++ TokenCollection cloneStudyHall()
++ TokenCollection cloneEntranceHall()
++ String getPlayerID()
++ int getCoins()
++ void addCoins(int)
++ void removeCoins(int)
++ void moveToStudyHallFromEntrance(TokenEnum)
++ void moveToStudyHall(TokenEnum)
++ void moveToEntranceHall(TokenEnum)
++ void moveToEntranceHall(TokenCollection)
++ void removeFromEntranceHall(TokenEnum)
++ void removeFromStudyHall(TokenCollection)
++ void removeFromStudyHall(TokenEnum)
++ void removeFromEntranceHall(TokenCollection)
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.visitor.serialize_command.LoadGame {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland {
++ void visit(Board)
++ String getPlayerID()
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.visitor.base_commands.PrepareForNextRound {
++ void visit(Board)
+}
+class it.polimi.ingsw.model.cardhandler.ApprenticeCard {
++ Integer getMovementValue()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+class it.polimi.ingsw.model.visitor.character_cards.PlayCharacterCardCommand {
++ {static} PlayerVisitorCommand fromJson(JsonObject)
++ void visit(Board)
++ String getPlayerID()
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.islands.exceptions.GameShouldBeOverException {
+}
+enum it.polimi.ingsw.model.islands.TowerEnum {
++  WHITE
++  BLACK
++  GREY
++  NONE
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature {
++ String getPlayerID()
++ void visit(Board)
++ boolean equals(Object)
++ int hashCode()
+}
+interface it.polimi.ingsw.model.visitor.VisitorCommand {
+~ void visit(Game)
+~ void visit(Board)
+}
+class it.polimi.ingsw.model.islands.exceptions.MissingMotherNatureException {
+}
+class it.polimi.ingsw.model.Board {
++ void accept(VisitorCommand)
++ List<Cloud> getClouds()
++ IslandChain getIslands()
++ Map<String,DashBoard> getDashBoards()
++ CardHandler getCardHandler()
++ TokenCollection getBag()
++ Professors getProfessors()
++ List<String> getPlayersID()
++ InfluenceHandler getInfluenceHandler()
++ List<CharacterCard> getCharacterCardList()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
++ void addEventObserver(GameEventReceiver)
++ Set<GameEventReceiver> popReceivers()
+}
+class it.polimi.ingsw.model.islands.exceptions.NoneTowerException {
+}
+class it.polimi.ingsw.model.character_cards.Card2 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.cardhandler.PlayerCards {
++ {static} List<ApprenticeCard> createApprenticeCards()
++ void playCard(Integer)
++ String getPlayerID()
++ ApprenticeCard getLastCard()
++ void prepareForNextTurn()
++ Boolean hasPlayedCard()
++ List<ApprenticeCard> getPlayedCards()
++ List<ApprenticeCard> getAvailableCards()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard {
++ void visit(Board)
++ String getPlayerID()
++ boolean equals(Object)
++ int hashCode()
+}
+enum it.polimi.ingsw.model.dashboard.TokenEnum {
++  GREEN
++  RED
++  YELLOW
++  VIOLET
++  BLUE
++ {static} List<TokenEnum> allBut(Set<TokenEnum>)
++ {static} List<TokenEnum> allBut(TokenEnum)
++ {static} TokenEnum random()
++ {static} TokenEnum randomAmong(Set<TokenEnum>)
+}
+abstract class it.polimi.ingsw.model.character_cards.CharacterCard {
++ {abstract}void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ void check()
++ String getCardName()
++ void reset(Board)
+}
+class it.polimi.ingsw.model.dashboard.exceptions.AlreadyPlayedCardException {
+}
+class it.polimi.ingsw.model.Cloud {
++ void addTokens(TokenCollection)
++ int size()
++ TokenCollection removeTokens()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.character_cards.Card8 {
++ void playCard(Board,String,TokenEnum,int,TokenCollection,TokenCollection)
++ String getClassName()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+
+
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.FillClouds
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card7
+it.polimi.ingsw.model.islands.exceptions.RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.ConflictingTowersException
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card1
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.PrepareForNextTurn
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Professors
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Professors
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.ActionPhaseState
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.PickACloudState
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.GameOverState
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card11
+it.polimi.ingsw.model.interfaces.Visitable <|.. it.polimi.ingsw.model.Game
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Game
+it.polimi.ingsw.model.dashboard.exceptions.Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.IllegalApprenticeCardException
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card6
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.islands.IslandChain
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.islands.IslandChain
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card9
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.state.State
+it.polimi.ingsw.model.game_event.GameEventCreator <|.. it.polimi.ingsw.model.ModelEventCreator
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.MoveMotherNatureState
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.MoveToEntranceHall
+it.polimi.ingsw.model.visitor.VisitorCommand <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.PlaceTokensState
+it.polimi.ingsw.model.dashboard.exceptions.Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.OutOfBoundIntegerCardException
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card4
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.PlayApprenticeCardState
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.cardhandler.CardHandler
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.cardhandler.CardHandler
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.dashboard.DashBoard
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.dashboard.DashBoard
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.serialize_command.LoadGame
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.PrepareForNextRound
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.character_cards.PlayCharacterCardCommand
+it.polimi.ingsw.model.islands.exceptions.RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.GameShouldBeOverException
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature
+it.polimi.ingsw.model.islands.exceptions.RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.MissingMotherNatureException
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Board
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Board
+it.polimi.ingsw.model.islands.exceptions.RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.NoneTowerException
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card2
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.cardhandler.PlayerCards
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.character_cards.CharacterCard
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.character_cards.CharacterCard
+it.polimi.ingsw.model.dashboard.exceptions.Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.AlreadyPlayedCardException
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Cloud
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card8
+@enduml

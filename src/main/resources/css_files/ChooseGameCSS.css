@@ -1,0 +1,25 @@
+
+.button{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 32;
+    -fx-pref-height: 75;
+    -fx-pref-width: 300;
+}
+
+.button:hover{
+    -fx-pref-width: 300;
+    -fx-cursor: pointer;
+    -fx-text-fill: black;
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}
+
+VBox{
+    -fx-pref-height: -1;
+    -fx-pref-width: 300;
+    -fx-background-color: rgba(59, 255, 248, 0.4);
+    -fx-border-color: transparent;
+    -fx-border-style: solid;
+    -fx-font-family: 'High Tower Text';
+}
+

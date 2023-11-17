@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+class it.polimi.ingsw.controller.server.connection.ServerPingTimer {
+- Connection connection
+# void explode()
+}
+class it.polimi.ingsw.controller.server.connection.ServerPingSender {
+- Connection connection
+# void timeTick()
+}
+class it.polimi.ingsw.controller.server.connection.ConcreteConnection {
++ void createLobby(String,int,TypeOfGame)
++ void leave()
++ void joinLobby(String,String)
++ void playApprenticeCard(int)
++ void playCharacterCard(String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
++ void moveToStudyHall(TokenEnum)
++ void moveToIsland(TokenEnum,int)
++ void moveMotherNature(int)
++ void pickCloud(int)
++ void ping()
+}
+abstract class it.polimi.ingsw.controller.server.connection.Connection {
+- Socket socket
+# ServerPingTimer timer
+- ServerPingSender pingSender
+- Scanner in
+- PrintWriter out
+- Gson serializer
+- Gson deserializer
+- String name
+- Service service
++ String getName()
++ void setName(String)
++ void run()
++ void kick()
++ void disconnect()
++ void send(ServerResponse)
+# Service getService()
++ void setService(Service)
+}
+
+
+it.polimi.ingsw.controller.ping_protocol.TimeBomb <|-- it.polimi.ingsw.controller.server.connection.ServerPingTimer
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.controller.server.connection.ServerPingSender
+it.polimi.ingsw.controller.server.connection.Connection <|-- it.polimi.ingsw.controller.server.connection.ConcreteConnection
+it.polimi.ingsw.controller.server.connection.Runnable <|.. it.polimi.ingsw.controller.server.connection.Connection
+it.polimi.ingsw.controller.communication_protocol.ServerAcceptor <|.. it.polimi.ingsw.controller.server.connection.Connection
+@enduml

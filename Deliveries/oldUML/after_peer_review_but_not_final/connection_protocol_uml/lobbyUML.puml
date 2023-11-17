@@ -1,0 +1,80 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy {
+- Set<String> playersOfTheGame
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+- void sendDefaultMessage()
+- Map<String,ConnectionStatusEnum> createLobbyStandbyArg()
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+}
+class it.polimi.ingsw.controller.server.lobby.ConcreteLobby {
++ void leave(Connection)
++ void playApprenticeCard(Connection,int)
++ void playCharacterCard(Connection,String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
++ void moveToStudyHall(Connection,TokenEnum)
++ void moveToIsland(Connection,TokenEnum,int)
++ void moveMotherNature(Connection,int)
++ void pickCloud(Connection,int)
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+}
+abstract class it.polimi.ingsw.controller.server.lobby.Lobby {
+- String gameID
+- int numberOfPlayers
+- TypeOfGame gameMode
+- Map<String,Connection> connectedPlayers
+# LobbyState lobbyState
+- State gameState
+- EventBuffer buffer
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void setLobbyState(LobbyState)
++ String getGameID()
++ int getNumberOfPlayers()
++ State getGameState()
++ Map<String,Connection> getConnectedPlayers()
++ void addPlayer(Connection)
++ void updateAllPlayers(ServerResponse)
++ void startGameUp()
++ void disconnectPlayer(Connection)
+- List<String> shuffleList(List<String>)
++ void executeGameCommand(PlayerVisitorCommand)
++ void saveGameState()
++ void reloadGameState()
++ EventBuffer getBuffer()
+}
+abstract class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState {
+# Lobby lobby
++ {abstract}void onAddPlayer(Connection)
++ {abstract}void onRemovePlayer(Connection)
++ {abstract}void onExecuteCommand(PlayerVisitorCommand)
++ {abstract}void sendDefaultResponse()
+}
+interface it.polimi.ingsw.controller.server.lobby.ILobby {
+~ void onAddPlayer(Connection)
+~ void onRemovePlayer(Connection)
+~ void onExecuteCommand(PlayerVisitorCommand)
+}
+
+
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame
+it.polimi.ingsw.controller.server.lobby.Lobby <|-- it.polimi.ingsw.controller.server.lobby.ConcreteLobby
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame
+it.polimi.ingsw.controller.server.lobby.ILobby <|.. it.polimi.ingsw.controller.server.lobby.Lobby
+it.polimi.ingsw.controller.server.Service <|-- it.polimi.ingsw.controller.server.lobby.ILobby
+@enduml

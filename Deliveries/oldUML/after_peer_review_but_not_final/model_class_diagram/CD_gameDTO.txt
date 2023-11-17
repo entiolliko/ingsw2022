@@ -1,0 +1,48 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+class Game{
+	-gamePhase : String
+	-currentPlayer : String
+	-Bag : Integer
+	-Clouds : List<Map<TokeEnum, Integer>>
+	-Islands : List<IslandDTO>
+    -Dashboards : List<DashboardDTO>
+    -CharacterCards : List<CharacterCardDTO>
+}
+
+class IslandDTO{
+    -Tokens : Map<TokeEnum, Integer>
+    -Index : Integer
+    -Tower : TowerEnum
+    -MotherNature : boolean
+    -Size : Integer
+}
+
+class DashboardDTO{
+    -Owner : String
+    -EntranceHall : Map<TokenEnum, Integer>
+    -StudyHall : Map<TokeEnum, Integer>
+    -Towers : Integer
+    -TowerColour : TowerEnum
+    -Coins : Integer
+    -Professors : Set<TokeEnum>
+    -TheHand : List<Integer>
+    -PlayedCards : Dequeue<Integer>
+}
+
+class CharacterCardDTO{
+    -isActive : boolean
+    -className : String
+    -cost : Integer
+    -tokens : Map<TokeEnum, Integer>
+}
+
+Game -- CharacterCardDTO
+Game -- IslandDTO
+Game -- DashboardDTO
+@enduml
+
+
+
+

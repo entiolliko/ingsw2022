@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+actor Player as pl
+participant Client as cl
+participant Controller as cn
+
+participant State as st
+participant Game as gm
+participant Board as bd
+participant MoveToIsland as mi
+participant DashBoard as db
+participant IslandChain as ic
+
+pl->cl : play card
+cl->mi : create
+cl->cn : send json command
+cn->st : State.run(command)
+group VisitorPattern
+    st->gm : Game.accept(command)
+    gm->mi : MoveToIsland.visit(game)
+    mi->bd : game.getBoard().accept(command)
+    bd->mi : MoveToIsland.visit(board)
+end
+mi->db : DashBoard.removeFromEntranceHall(tokens)
+mi->ic : IslandChain.add(tokens, islandID)
+
+@enduml

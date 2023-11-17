@@ -1,0 +1,61 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+class Server implements Runnable, Service{
+    +run() : void
+    +disconnect(Connection connnection)
+    +addNewLobby(String request) : String
+    +addToLobby(String ID, Connection connection) : void
+}
+
+interface iLobby implements Service{
+    - onAdd(Connection connection) : voi
+    - onRemove(Connection connection) : void
+    - onExecuteCommand(PlayerVisitor command) : void
+}
+
+class Lobby  implements iLobby{
+    - gameState : State
+    - lobbyState : LobbyState
+    + setLobbyState() : void
+    + updateAllPlayers() : void
+}
+
+abstract class LobbyState{
+    - lobby : Lobby
+    - onAdd(Connection connection) : voi
+    - onRemove(Connection connection) : void
+    - onExecuteCommand(PlayerVisitor command) : void
+}
+
+class Connection implements Runnable{
+    -socket : Socket
+    -service : Service
+    +setName(String name) : void
+    +getName() : String
+    +setService(Service service) : void
+    +run() : void
+    +sendThreaded(ServerResponse reply, Content content) : void
+    +disconnect() : void
+}
+
+interface Runnable
+interface Visitable
+class Lobby implements Runnable, Visitable
+abstract class State
+
+Server -- Connection
+Lobby *-- Connection
+Server o-- Lobby
+Connection --> ClientPackage : uses
+
+Server --> ClientPackage : uses
+Lobby --> ClientPackage : uses
+Client --> ClientPackage : use
+State -- Lobby
+Client --> Connection : send ClientPackage
+Client <-- Connection : send State
+LobbyState --o Lobby
+@enduml

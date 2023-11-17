@@ -1,0 +1,29 @@
+HBox{
+    -fx-border-color: transparent;
+    -fx-border-style: solid;
+    -fx-font-family: 'High Tower Text';
+}
+
+.button{
+    -fx-background-color: rgba(59, 255, 248, 0.4);
+    -fx-border-color: transparent;
+    -fx-border-style: solid;
+    -fx-text-fill: white;
+    -fx-font-size: 32;
+    -fx-font-family: 'High Tower Text';
+
+    -fx-pref-height: 75;
+    -fx-pref-width: 222;
+}
+.button:hover{
+    -fx-cursor: pointer;
+    -fx-text-fill: black;
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+}
+.label{
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-font-family: 'High Tower Text';
+    -fx-text-fill: black;
+    -fx-font-size: 36;
+    -fx-text-alignment: center;
+}

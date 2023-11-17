@@ -1,0 +1,33 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+class it.polimi.ingsw.controller.server.welcome_server.ConcreteServer {
++ void createLobby(Connection,String,int,TypeOfGame)
++ void leave(Connection)
++ void joinLobby(Connection,String,String)
+}
+abstract class it.polimi.ingsw.controller.server.welcome_server.Server {
+- int port
+# Set<Connection> limbo
+# Map<String,ILobby> lobbies
+# ProgressiveNumberGenerator numberGenerator
+# ServerSocket serverSocket
+# Boolean go
++ {static} void main(String[])
++ void shutdown()
++ void run()
+- void createServerSocket()
++ void disconnect(Connection)
++ String addNewLobby(int,TypeOfGame)
+- void notifyLimbo()
+- void tryLoadingLobby(String)
++ void addToLobby(String,Connection)
+- void moveRequestSenderToLobby(String,Connection)
+}
+
+
+it.polimi.ingsw.controller.server.welcome_server.Server <|-- it.polimi.ingsw.controller.server.welcome_server.ConcreteServer
+it.polimi.ingsw.controller.server.welcome_server.Runnable <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+it.polimi.ingsw.controller.server.Service <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+participant State as st
+participant Game as gm
+participant Board as bd
+participant FillClouds as fc
+participant Cloud as cl
+
+
+group VisitorPattern
+    st-->fc : create
+    st-->gm : Game.accept(command)
+    gm-->fc : FillClouds.visit(game)
+    fc-->bd : game.getBoard().accept(command)
+    bd-->fc : FillClouds.visit(board)
+end
+loop for each Cloud
+    fc-->cl : cloud.addTokens(tokens)
+end
+
+@enduml

@@ -1,0 +1,368 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 2
+skinparam linetype polyline
+!include skin.puml
+left to right direction
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ErrorRes {
++ void visit(ClientAcceptor)
+}
+class it.polimi.ingsw.controller.exceptions.ReloadGameException {
+}
+class it.polimi.ingsw.controller.data_transfer_objects.CharacterCardDTO {
++ boolean isActive()
++ void setActive(boolean)
++ String getCardName()
++ void setCardName(String)
++ Integer getCost()
++ void setCost(Integer)
++ Map<TokenEnum,Integer> getTokens()
++ String getEffect()
++ void setEffect(String)
++ void setTokens(Map<TokenEnum,Integer>)
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToStudyHallReq {
++ void visit(ServerAcceptor)
+}
+abstract class it.polimi.ingsw.controller.communication_protocol.ClientRequest {
++ {abstract}void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.server.connection.ConcreteConnection {
++ void createLobby(String,int,TypeOfGame)
++ void leave()
++ void joinLobby(String,String)
++ void playApprenticeCard(int)
++ void playCharacterCard(String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
++ void moveToStudyHall(TokenEnum)
++ void moveToIsland(TokenEnum,int)
++ void moveMotherNature(int)
++ void pickCloud(int)
++ void ping()
+}
+class it.polimi.ingsw.controller.exceptions.InvalidCommandException {
++ String toString(String)
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.GameStatusRes {
++ void visit(ClientAcceptor)
+}
+class it.polimi.ingsw.controller.exceptions.ServerException {
+}
+class it.polimi.ingsw.controller.exceptions.FailedServerConnectionException {
+}
+interface it.polimi.ingsw.controller.server.lobby.ILobby {
+~ void onAddPlayer(Connection)
+~ void onRemovePlayer(Connection)
+~ void onExecuteCommand(PlayerVisitorCommand)
+}
+abstract class it.polimi.ingsw.controller.server.connection.Connection {
++ String getName()
++ void setName(String)
++ void run()
++ void kick(String)
++ void disconnect()
++ void send(ServerResponse)
+# Service getService()
++ void setService(Service)
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.character_cards.PlayCharacterCardReq {
++ void visit(ServerAcceptor)
+}
+interface it.polimi.ingsw.controller.server.Service {
+~ void createLobby(Connection,String,int,TypeOfGame)
+~ void leave(Connection)
+~ void joinLobby(Connection,String,String)
+~ void playApprenticeCard(Connection,int)
+~ void playCharacterCard(Connection,String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
+~ void moveToStudyHall(Connection,TokenEnum)
+~ void moveToIsland(Connection,TokenEnum,int)
+~ void moveMotherNature(Connection,int)
+~ void pickCloud(Connection,int)
+~ void defaultError()
+}
+class it.polimi.ingsw.controller.files_storage.GameSaver {
++ {static} void saveGame(State)
++ {static} State loadGame(String)
++ {static} String getMaxId()
++ {static} Set<String> loadableLobbies(Set<String>)
++ {static} void cleanse()
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyJoinedRes {
++ void visit(ClientAcceptor)
+}
+class it.polimi.ingsw.controller.server.connection.ServerPingTimer {
+# void explode()
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToIslandReq {
++ void visit(ServerAcceptor)
+}
+abstract class it.polimi.ingsw.controller.server.welcome_server.Server {
++ {static} void main(String[])
++ void shutDown()
++ void run()
++ void disconnect(Connection)
++ String addNewLobby(int,TypeOfGame)
++ void addToLobby(String,Connection)
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveMotherNatureReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.exceptions.LobbyFullException {
+}
+class it.polimi.ingsw.controller.utility.ProgressiveNumberGenerator {
++ int nextValue()
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyStandbyRes {
++ void visit(ClientAcceptor)
+}
+class it.polimi.ingsw.controller.data_transfer_objects.IslandDTO {
++ int getIndex()
++ void setIndex(int)
++ int getSize()
++ void setSize(int)
++ boolean hasMotherNature()
++ void setHasMotherNature(boolean)
++ Map<TokenEnum,Integer> getTokens()
++ void setTokens(Map<TokenEnum,Integer>)
++ TowerEnum getTowerColour()
++ void setTowerColour(TowerEnum)
++ String toString()
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbiesStatusRes {
++ void visit(ClientAcceptor)
+}
+abstract class it.polimi.ingsw.controller.communication_protocol.ServerResponse {
++ {abstract}void visit(ClientAcceptor)
++ boolean isDisconnectReq()
+}
+class it.polimi.ingsw.controller.utility.EventBuffer {
++ void empty()
++ List<GameEvent> flush()
++ void acceptEvent(GameEvent)
+}
+class it.polimi.ingsw.controller.data_transfer_objects.GameDTO {
++ String getCurrentPlayer()
++ void setCurrentPlayer(String)
++ String getGamePhase()
++ void setGamePhase(String)
++ int getBagSize()
++ void setBagSize(int)
++ List<Map<TokenEnum,Integer>> getClouds()
++ void setClouds(List<Map<TokenEnum,Integer>>)
++ List<IslandDTO> getIslands()
++ void setIslands(List<IslandDTO>)
++ Map<String,DashboardDTO> getDashboards()
++ void setDashboards(Map<String,DashboardDTO>)
++ List<CharacterCardDTO> getCharacterCards()
++ void setCharacterCards(List<CharacterCardDTO>)
++ String toString()
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.CreateLobbyReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+}
+abstract class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState {
++ {abstract}void onAddPlayer(Connection)
++ {abstract}void onRemovePlayer(Connection)
++ {abstract}void onExecuteCommand(PlayerVisitorCommand)
++ {abstract}void sendDefaultResponse()
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.PingReq {
++ void visit(ServerAcceptor)
+}
+interface it.polimi.ingsw.controller.data_transfer_objects.Simplifiable {
+~ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.controller.exceptions.FailedClientConnectionException {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ServerPing {
++ void visit(ClientAcceptor)
+}
+interface it.polimi.ingsw.controller.communication_protocol.ServerAcceptor {
+~ void accept(ClientRequest)
+~ void createLobby(String,int,TypeOfGame)
+~ void leave()
+~ void joinLobby(String,String)
+~ void playApprenticeCard(int)
+~ void playCharacterCard(String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
+~ void moveToStudyHall(TokenEnum)
+~ void moveToIsland(TokenEnum,int)
+~ void moveMotherNature(int)
+~ void pickCloud(int)
+~ void ping()
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ServerWelcomeRes {
++ void visit(ClientAcceptor)
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.LeaveReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.server.welcome_server.ConcreteServer {
++ void createLobby(Connection,String,int,TypeOfGame)
++ void leave(Connection)
++ void joinLobby(Connection,String,String)
+}
+abstract class it.polimi.ingsw.controller.ping_protocol.RegularExecutor {
+# {abstract}void timeTick()
++ void activate()
++ void deactivate()
+}
+class it.polimi.ingsw.controller.exceptions.NameAlreadyUsedException {
+}
+class it.polimi.ingsw.controller.exceptions.FailedServerSocketCreationException {
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PickCloudReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.JoinLobbyReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void sendDefaultResponse()
+}
+abstract class it.polimi.ingsw.controller.ping_protocol.TimeBomb {
+# void timeTick()
++ void activate()
+# {abstract}void explode()
++ void refresh()
+}
+class it.polimi.ingsw.controller.exceptions.NonExistentGameException {
+}
+enum it.polimi.ingsw.controller.utility.ConnectionStatusEnum {
++  ONLINE
++  OFFLINE
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.DisconnectedRes {
++ void visit(ClientAcceptor)
++ boolean isDisconnectReq()
+}
+class it.polimi.ingsw.controller.exceptions.InvalidArgsException {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PlayApprenticeCardReq {
++ void visit(ServerAcceptor)
+}
+class it.polimi.ingsw.controller.server.lobby.ConcreteLobby {
++ void leave(Connection)
++ void playApprenticeCard(Connection,int)
++ void playCharacterCard(Connection,String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
++ void moveToStudyHall(Connection,TokenEnum)
++ void moveToIsland(Connection,TokenEnum,int)
++ void moveMotherNature(Connection,int)
++ void pickCloud(Connection,int)
+}
+class it.polimi.ingsw.controller.data_transfer_objects.DashboardDTO {
++ String getOwner()
++ void setOwner(String)
++ Map<TokenEnum,Integer> getEntranceHall()
++ void setEntranceHall(Map<TokenEnum,Integer>)
++ Map<TokenEnum,Integer> getStudyHall()
++ void setStudyHall(Map<TokenEnum,Integer>)
++ Integer getTowers()
++ void setTowers(Integer)
++ TowerEnum getTowerColour()
++ void setTowerColour(TowerEnum)
++ Integer getCoins()
++ void setCoins(Integer)
++ Set<TokenEnum> getProfessors()
++ void setProfessors(Set<TokenEnum>)
++ List<Integer> getTheHand()
++ void setTheHand(List<Integer>)
++ Deque<Integer> getPlayedCards()
++ void setPlayedCards(Deque<Integer>)
++ boolean hasPlayedCard()
++ void setHasPlayedCard(boolean)
++ String toString()
+}
+abstract class it.polimi.ingsw.controller.server.lobby.Lobby {
++ void onAddPlayer(Connection)
++ void onRemovePlayer(Connection)
++ void onExecuteCommand(PlayerVisitorCommand)
++ void setLobbyState(LobbyState)
++ String getGameID()
++ int getNumberOfPlayers()
++ State getGameState()
++ Map<String,Connection> getConnectedPlayers()
++ void addPlayer(Connection)
++ void updateAllPlayers(ServerResponse)
++ void startGameUp()
++ void disconnectPlayer(Connection)
++ void executeGameCommand(PlayerVisitorCommand)
++ void saveGameState()
++ void reloadGameState()
++ EventBuffer getBuffer()
+}
+class it.polimi.ingsw.controller.server.connection.ServerPingSender {
+# void timeTick()
+}
+interface it.polimi.ingsw.controller.communication_protocol.ClientAcceptor {
+~ void accept(ServerResponse)
+~ void serverWelcome(Set<String>,Set<String>)
+~ void lobbyJoined(String,Set<String>)
+~ void lobbyStandby(String,Map<String,ConnectionStatusEnum>)
+~ void gameStatus(GameDTO,List<GameEvent>)
+~ void disconnected(String)
+~ void error(String)
+~ void lobbiesStatus(Set<String>,Set<String>)
+}
+
+
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ErrorRes
+it.polimi.ingsw.controller.exceptions.Exception <|-- it.polimi.ingsw.controller.exceptions.ReloadGameException
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToStudyHallReq
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.controller.communication_protocol.ClientRequest
+it.polimi.ingsw.controller.server.connection.Connection <|-- it.polimi.ingsw.controller.server.connection.ConcreteConnection
+it.polimi.ingsw.controller.exceptions.RuntimeException <|-- it.polimi.ingsw.controller.exceptions.InvalidCommandException
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.GameStatusRes
+it.polimi.ingsw.controller.exceptions.Exception <|-- it.polimi.ingsw.controller.exceptions.ServerException
+it.polimi.ingsw.controller.exceptions.RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedServerConnectionException
+it.polimi.ingsw.controller.server.Service <|-- it.polimi.ingsw.controller.server.lobby.ILobby
+it.polimi.ingsw.controller.server.connection.Runnable <|.. it.polimi.ingsw.controller.server.connection.Connection
+it.polimi.ingsw.controller.communication_protocol.ServerAcceptor <|.. it.polimi.ingsw.controller.server.connection.Connection
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.character_cards.PlayCharacterCardReq
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyJoinedRes
+it.polimi.ingsw.controller.ping_protocol.TimeBomb <|-- it.polimi.ingsw.controller.server.connection.ServerPingTimer
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToIslandReq
+it.polimi.ingsw.controller.server.welcome_server.Runnable <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+it.polimi.ingsw.controller.server.Service <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveMotherNatureReq
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.LobbyFullException
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyStandbyRes
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbiesStatusRes
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.controller.communication_protocol.ServerResponse
+it.polimi.ingsw.model.game_event.GameEventReceiver <|.. it.polimi.ingsw.controller.utility.EventBuffer
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.CreateLobbyReq
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.PingReq
+it.polimi.ingsw.controller.exceptions.RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedClientConnectionException
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ServerPing
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ServerWelcomeRes
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.LeaveReq
+it.polimi.ingsw.controller.server.welcome_server.Server <|-- it.polimi.ingsw.controller.server.welcome_server.ConcreteServer
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.NameAlreadyUsedException
+it.polimi.ingsw.controller.exceptions.RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedServerSocketCreationException
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PickCloudReq
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.JoinLobbyReq
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.controller.ping_protocol.TimeBomb
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.NonExistentGameException
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.DisconnectedRes
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.InvalidArgsException
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PlayApprenticeCardReq
+it.polimi.ingsw.controller.server.lobby.Lobby <|-- it.polimi.ingsw.controller.server.lobby.ConcreteLobby
+it.polimi.ingsw.controller.server.lobby.ILobby <|.. it.polimi.ingsw.controller.server.lobby.Lobby
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.controller.server.connection.ServerPingSender
+@enduml

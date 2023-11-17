@@ -1,0 +1,318 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 2
+skinparam ranksep 500
+skinparam linetype polyline
+!include skin.puml
+left to right direction
+
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent {
++ void visit(GameEventHandler)
++ String getCardName()
++ String getDescription()
+}
+interface it.polimi.ingsw.model.interfaces.Visitable {
+~ void accept(VisitorCommand)
+}
+class it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent {
++ Integer getFrom()
++ Integer getTo()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+interface it.polimi.ingsw.model.game_event.GameEventReceiver {
+~ void acceptEvent(GameEvent)
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent {
++ String getCardName()
++ Map<TokenEnum,Integer> getTokens()
++ String getPlayerID()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent {
++ String getCardName()
++ TokenEnum getToken()
++ String getPlayerID()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent {
++ TokenEnum getToken()
++ String getCardName()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent {
++ String getNewStateName()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.custom_data_structures.MagicList {
++ String getClassName()
+}
+class it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent {
++ int getCloudIndex()
++ Map<TokenEnum,Integer> getTokens()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeInputException {
+}
+class it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent {
++ void visit(GameEventHandler)
++ String getErrorMessage()
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent {
++ TokenEnum getToken()
++ Integer getIslandIndex()
++ String getPlayerID()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.EmptyException {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.MissingProfessorException {
++ String getMessage()
+}
+class it.polimi.ingsw.model.custom_data_structures.Team {
++ String getName()
++ List<String> getPlayers()
++ TowerEnum getTowerColour()
++ int getNumberOfTowers()
++ void addTowers(int)
++ void takeTowers(int)
++ Team copy()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
++ void fillDTO(GameDTO)
+}
+class it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent {
++ TowerEnum getTower()
++ String getPlayerID()
++ Integer getIsland()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent {
++ String getPlayerID()
++ TokenEnum getToken()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent {
++ int getCloudIndex()
++ String getReceivingPlayer()
++ Map<TokenEnum,Integer> getContent()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.custom_data_structures.TokenCollection {
++ {static} TokenCollection newEmptyCollection()
++ {static} TokenCollection createCollection(Map<TokenEnum,Integer>)
++ {static} TokenCollection newDefaultBag()
++ TokenCollection randomPop(int)
++ TokenEnum randomTokenPop()
++ void addTokens(TokenEnum,int)
++ boolean isEmpty()
++ int get(TokenEnum)
++ int size()
++ TokenCollection popToken(TokenEnum,int)
++ void addToCollection(TokenCollection)
++ void removeFromCollection(TokenCollection)
++ TokenCollection copy()
++ boolean equals(Object)
++ Map<TokenEnum,Integer> getMap()
++ int hashCode()
++ String toString()
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.SameNameException {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated {
++ void visit(GameEventHandler)
++ String getCardName()
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent {
++ String getCardName()
++ TokenEnum getToken()
++ int getIslandIndex()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent {
++ TowerEnum getTower()
++ String getPlayerID()
++ Integer getIsland()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeAmountException {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.PositiveAmountException {
++ String getMessage()
+}
+class it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent {
++ String getPlayerID()
++ TokenEnum getToken()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent {
++ List<String> getWinner()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+enum it.polimi.ingsw.model.custom_data_structures.TypeOfGame {
++  NORMAL
++  EXPERT
+}
+class it.polimi.ingsw.model.custom_data_structures.CircularList {
++ T get(int)
++ T remove(int)
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent {
++ Map<TokenEnum,Integer> getTokens()
++ String getCardName()
++ String getPlayerID()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.ChoosingCardException {
+}
+class it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent {
++ String getCurrentPlayer()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+interface it.polimi.ingsw.model.game_event.GameEvent {
+~ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent {
++ String getPlayerID()
++ Integer getCardID()
++ void visit(GameEventHandler)
+}
+class it.polimi.ingsw.model.game_event.game_events.GameStartedEvent {
++ void visit(GameEventHandler)
+}
+interface it.polimi.ingsw.model.game_event.GameEventHandler {
+~ void acceptEvent(GameEvent)
+~ void gameStarted(GameStartedEvent)
+~ void commandFailed(CommandFailedEvent)
+~ void newState(NewStateGameEvent)
+~ void currentPlayerChanged(CurrentPlayerChangedGameEvent)
+~ void bagToCloud(BagToCloudEvent)
+~ void gameIsOver(GameIsOverEvent)
+~ void playedApprenticeCard(PlayedApprenticeCardEvent)
+~ void professorChanged(ProfessorChangedEvent)
+~ void tokenToStudyHall(TokenToStudyHallEvent)
+~ void tokenToIsland(TokenToIslandEvent)
+~ void moveMotherNature(MoveMotherNatureEvent)
+~ void towersToDashBoard(TowersToDashBoardEvent)
+~ void towersToIsland(TowersToIslandEvent)
+~ void mergedIslands(MergedIslandsEvent)
+~ void cloudToEntranceHall(CloudToEntranceHallEvent)
+~ void ccActivated(CCActivatedEvent)
+~ void ccDeActivated(CCDeActivated)
+~ void bagToCard(BagTokenToCardEvent)
+~ void cardToEntranceHall(CardToEntranceHallEvent)
+~ void cardTokenToIsland(CardTokenToIslandEvent)
+~ void cardTokenToStudyHall(CardTokenToStudyHallEvent)
+~ void entranceHallToCard(EntranceHallToCardEvent)
+~ void coinsChanged(CoinsChangedEvent)
+}
+interface it.polimi.ingsw.model.game_event.GameEventCreator {
+~ Set<GameEventReceiver> popReceivers()
+~ void addEventObserver(GameEventReceiver)
+}
+class it.polimi.ingsw.model.custom_data_structures.IntegerStack {
++ boolean isEmpty()
++ int size()
++ void add(int)
++ void decreaseBy(int)
++ boolean equals(Object)
++ String toString()
++ int hashCode()
++ void inject(IntegerStack)
+}
+class it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent {
++ int getIslandIndex1()
++ int getIslandIndex2()
++ void visit(GameEventHandler)
++ boolean equals(Object)
++ int hashCode()
+}
+class it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent {
++ String getPlayerId()
++ int getCurrentValue()
++ void visit(GameEventHandler)
+}
+
+
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.interfaces.Visitable
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent
+java.util.ArrayList <|-- it.polimi.ingsw.model.custom_data_structures.MagicList
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeInputException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.EmptyException
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.MissingProfessorException
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.custom_data_structures.Team
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.SameNameException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeAmountException
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.PositiveAmountException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent
+java.util.ArrayList <|-- it.polimi.ingsw.model.custom_data_structures.CircularList
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent
+it.polimi.ingsw.model.custom_data_structures.exceptions.RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.ChoosingCardException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.game_event.GameEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.GameStartedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.GameStartedEvent
+it.polimi.ingsw.model.game_event.GameEventReceiver <|-- it.polimi.ingsw.model.game_event.GameEventHandler
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent
+@enduml

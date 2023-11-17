@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+participant State as st
+participant Game as gm
+participant Board as bd
+participant PrepareForNextRound as pn
+participant CardHandler as ch
+participant InfluenceHandler as ih
+participant Professors as pf
+
+group VisitorPattern
+    st--> pn : create
+    st-->gm : Game.accept(command)
+    gm-->pn : PrepareForNextRound.visit(game)
+    pn-->bd : game.getBoard().accept(command)
+    bd-->pn : PrepareForNextRound.visit(board)
+end
+pn-->ch : CardHandler.prepareForNextRound()
+pn-->ih : InfluenceHandler.prepareForNextRound()
+pn-->pf : Professors.prepareForNextRound()
+
+@enduml

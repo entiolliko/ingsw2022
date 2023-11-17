@@ -1,0 +1,40 @@
+.idea/
+target/
+*.iml
+*.iws
+
+# ignore json test
+*.json
+#ignore all dot folders
+.*/
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+# files to always commit
+!.gitignore
+!README.md
+!pom.xml
+!.github/
+!src/main/java/it/polimi/ingsw/controller/files_storage/test_cases/*.json

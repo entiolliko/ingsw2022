@@ -1,0 +1,574 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 2
+skinparam linetype polyline
+skinparam ranksep 500
+skinparam dpi 10000
+!include skin.puml
+
+class it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent {
+}
+class it.polimi.ingsw.model.dashboard.exceptions.IllegalApprenticeCardException {
+}
+class it.polimi.ingsw.client.frontend.command_line.game_prompt.PrettyStringFormer {
+}
+class it.polimi.ingsw.controller.exceptions.LobbyFullException {
+}
+class it.polimi.ingsw.controller.data_transfer_objects.DashboardDTO {
+}
+interface it.polimi.ingsw.model.game_event.GameEventCreator {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent {
+}
+interface it.polimi.ingsw.model.game_event.GameEventHandler {
+}
+class it.polimi.ingsw.model.visitor.character_cards.PlayCharacterCardCommand {
+}
+class it.polimi.ingsw.model.visitor.base_commands.MoveToEntranceHall {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.JoinServerScreenController {
+}
+class it.polimi.ingsw.client.frontend.command_line.game_prompt.StringParallelizer {
+}
+class it.polimi.ingsw.model.character_cards.Card8 {
+}
+class it.polimi.ingsw.model.custom_data_structures.TokenCollection {
+}
+class it.polimi.ingsw.model.InfluenceHandler {
+}
+interface it.polimi.ingsw.model.game_event.GameEvent {
+}
+class it.polimi.ingsw.model.character_cards.Card7 {
+}
+class it.polimi.ingsw.model.islands.Island {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToStudyHallReq {
+}
+class it.polimi.ingsw.model.dashboard.exceptions.AlreadyPlayedCardException {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.MainGameScreenController {
+}
+class it.polimi.ingsw.model.ModelEventCreator {
+}
+abstract class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState {
+}
+abstract class it.polimi.ingsw.client.backend.Connector {
+}
+class it.polimi.ingsw.client.frontend.command_line.game_prompt.CLIEventHandler {
+}
+class it.polimi.ingsw.client.backend.DefaultConnector {
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame {
+}
+class it.polimi.ingsw.controller.exceptions.InvalidArgsException {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveMotherNatureReq {
+}
+class it.polimi.ingsw.controller.server.welcome_server.ConcreteServer {
+}
+abstract class it.polimi.ingsw.custom_json_builder.GsonablePrototype {
+}
+class it.polimi.ingsw.model.state.GameOverState {
+}
+class it.polimi.ingsw.client.frontend.gui.MainWindowNew {
+}
+class it.polimi.ingsw.client.frontend.gui.GUIAcceptor {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ErrorRes {
+}
+class it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent {
+}
+class it.polimi.ingsw.client.frontend.command_line.LineInterpreter {
+}
+class it.polimi.ingsw.client.frontend.command_line.HelpLegend {
+}
+class it.polimi.ingsw.controller.exceptions.InvalidCommandException {
+}
+abstract class it.polimi.ingsw.controller.communication_protocol.ClientRequest {
+}
+class it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent {
+}
+class it.polimi.ingsw.client.frontend.gui.MainWindow {
+}
+class it.polimi.ingsw.client.backend.ClientPingSender {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.PositiveAmountException {
+}
+class it.polimi.ingsw.model.cardhandler.CardHandler {
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy {
+}
+class it.polimi.ingsw.client.frontend.PromptSelector {
+}
+class it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.EntryScreenController {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ServerWelcomeRes {
+}
+class it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent {
+}
+class it.polimi.ingsw.model.islands.IslandChain {
+}
+class it.polimi.ingsw.model.visitor.base_commands.PrepareForNextTurn {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyStandbyRes {
+}
+interface it.polimi.ingsw.controller.server.Service {
+}
+abstract class it.polimi.ingsw.controller.communication_protocol.ServerResponse {
+}
+abstract class it.polimi.ingsw.model.character_cards.CharacterCard {
+}
+class it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent {
+}
+class it.polimi.ingsw.controller.server.connection.ServerPingTimer {
+}
+class it.polimi.ingsw.model.dashboard.exceptions.OutOfBoundIntegerCardException {
+}
+abstract class it.polimi.ingsw.controller.server.lobby.Lobby {
+}
+class it.polimi.ingsw.controller.files_storage.GameSaver {
+}
+class it.polimi.ingsw.client.frontend.gui.Properties {
+}
+class it.polimi.ingsw.model.custom_data_structures.MagicList {
+}
+class it.polimi.ingsw.model.islands.exceptions.ConflictingTowersException {
+}
+class it.polimi.ingsw.client.frontend.command_line.CommandLineInterface {
+}
+class it.polimi.ingsw.controller.utility.ProgressiveNumberGenerator {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.ChooseMagiciansScreenController {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.SameNameException {
+}
+class it.polimi.ingsw.controller.exceptions.NameAlreadyUsedException {
+}
+class it.polimi.ingsw.model.character_cards.Card9 {
+}
+interface it.polimi.ingsw.client.frontend.ClientOutInterface {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.LeaveReq {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.DisconnectedRes {
+}
+class it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent {
+}
+class it.polimi.ingsw.model.Cloud {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PickCloudReq {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.ServerPing {
+}
+class it.polimi.ingsw.model.cardhandler.PlayerCards {
+}
+class it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent {
+}
+class it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent {
+}
+class it.polimi.ingsw.client.frontend.command_line.CLIScreen {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeAmountException {
+}
+interface it.polimi.ingsw.controller.communication_protocol.ServerAcceptor {
+}
+class it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent {
+}
+class it.polimi.ingsw.model.character_cards.Card6 {
+}
+interface it.polimi.ingsw.model.visitor.VisitorCommand {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall {
+}
+class it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent {
+}
+class it.polimi.ingsw.controller.exceptions.FailedServerConnectionException {
+}
+class it.polimi.ingsw.model.state.MoveMotherNatureState {
+}
+class it.polimi.ingsw.controller.server.lobby.ConcreteLobby {
+}
+class it.polimi.ingsw.model.character_cards.Card2 {
+}
+class it.polimi.ingsw.client.frontend.gui.GUIGameEventAcceptor {
+}
+class it.polimi.ingsw.model.character_cards.Card11 {
+}
+class it.polimi.ingsw.model.Professors {
+}
+class it.polimi.ingsw.model.cardhandler.ApprenticeCard {
+}
+class it.polimi.ingsw.model.character_cards.Card1 {
+}
+class it.polimi.ingsw.model.dashboard.DashBoard {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PlayApprenticeCardReq {
+}
+class it.polimi.ingsw.model.state.PlayApprenticeCardState {
+}
+class it.polimi.ingsw.controller.exceptions.ReloadGameException {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToIslandReq {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.EmptyException {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent {
+}
+abstract class it.polimi.ingsw.controller.server.connection.Connection {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.CreateLobbyReq {
+}
+class it.polimi.ingsw.model.visitor.serialize_command.ExportToJson {
+}
+enum it.polimi.ingsw.model.islands.TowerEnum {
++  WHITE
++  BLACK
++  GREY
++  NONE
+}
+class it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.CreateNewGameScreenController {
+}
+class it.polimi.ingsw.controller.exceptions.FailedClientConnectionException {
+}
+enum it.polimi.ingsw.controller.utility.ConnectionStatusEnum {
++  ONLINE
++  OFFLINE
+}
+enum it.polimi.ingsw.model.custom_data_structures.TypeOfGame {
++  NORMAL
++  EXPERT
+}
+enum it.polimi.ingsw.model.dashboard.TokenEnum {
++  GREEN
++  RED
++  YELLOW
++  VIOLET
++  BLUE
+}
+class it.polimi.ingsw.controller.data_transfer_objects.CharacterCardDTO {
+}
+class it.polimi.ingsw.controller.server.connection.ConcreteConnection {
+}
+class it.polimi.ingsw.model.state.PlaceTokensState {
+}
+abstract class it.polimi.ingsw.model.state.ActionPhaseState {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland {
+}
+class it.polimi.ingsw.model.Game {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent {
+}
+class it.polimi.ingsw.client.backend.ClientPingTimer {
+}
+class it.polimi.ingsw.model.islands.exceptions.NoneTowerException {
+}
+abstract class it.polimi.ingsw.controller.ping_protocol.RegularExecutor {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.PingReq {
+}
+interface it.polimi.ingsw.model.interfaces.Visitable {
+}
+class it.polimi.ingsw.debug_utility.DebugLogger {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.LobbyWaitingScreenController {
+}
+class it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.MissingProfessorException {
+}
+class it.polimi.ingsw.custom_json_builder.GsonDeserialize {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent {
+}
+interface it.polimi.ingsw.controller.server.lobby.ILobby {
+}
+enum it.polimi.ingsw.model.islands.MotherNatureEnum {
++  PRESENT
++  ABSENT
++  TEMP
+}
+class it.polimi.ingsw.custom_json_builder.CustomJsonBuilder {
+}
+interface it.polimi.ingsw.model.game_event.GameEventReceiver {
+}
+abstract class it.polimi.ingsw.controller.server.welcome_server.Server {
+}
+class it.polimi.ingsw.model.islands.exceptions.MissingMotherNatureException {
+}
+class it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent {
+}
+class it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent {
+}
+class it.polimi.ingsw.client.frontend.command_line.CharacterCardRequestBuilder {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyJoinedRes {
+}
+class it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent {
+}
+class it.polimi.ingsw.model.character_cards.Card4 {
+}
+class it.polimi.ingsw.controller.server.connection.ServerPingSender {
+}
+class it.polimi.ingsw.client.frontend.gui.rocket_science.MatheMagic {
+}
+interface it.polimi.ingsw.custom_json_builder.Gsonable {
+}
+class it.polimi.ingsw.controller.utility.EventBuffer {
+}
+class it.polimi.ingsw.model.game_event.game_events.GameStartedEvent {
+}
+class it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud {
+}
+class it.polimi.ingsw.model.visitor.base_commands.FillClouds {
+}
+class it.polimi.ingsw.controller.exceptions.NonExistentGameException {
+}
+class it.polimi.ingsw.model.islands.exceptions.GameShouldBeOverException {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.ChooseGameScreenController {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.GameStatusRes {
+}
+class it.polimi.ingsw.controller.exceptions.FailedServerSocketCreationException {
+}
+interface it.polimi.ingsw.controller.communication_protocol.ClientAcceptor {
+}
+interface it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand {
+}
+class it.polimi.ingsw.controller.exceptions.ServerException {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard {
+}
+class it.polimi.ingsw.controller.data_transfer_objects.IslandDTO {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeInputException {
+}
+class it.polimi.ingsw.controller.data_transfer_objects.GameDTO {
+}
+interface it.polimi.ingsw.controller.data_transfer_objects.Simplifiable {
+}
+class it.polimi.ingsw.model.custom_data_structures.exceptions.ChoosingCardException {
+}
+abstract class it.polimi.ingsw.controller.ping_protocol.TimeBomb {
+}
+class it.polimi.ingsw.model.custom_data_structures.Team {
+}
+class it.polimi.ingsw.client.frontend.gui.screen_controllers.JoinLobbyScreenController {
+}
+class it.polimi.ingsw.model.custom_data_structures.CircularList {
+}
+class it.polimi.ingsw.model.state.PickACloudState {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.JoinLobbyReq {
+}
+class it.polimi.ingsw.model.visitor.base_commands.PrepareForNextRound {
+}
+class it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature {
+}
+class it.polimi.ingsw.model.Board {
+}
+class it.polimi.ingsw.model.visitor.serialize_command.LoadGame {
+}
+class it.polimi.ingsw.model.custom_data_structures.IntegerStack {
+}
+abstract class it.polimi.ingsw.model.state.State {
+}
+class it.polimi.ingsw.client.frontend.command_line.game_prompt.GamePrompt {
+}
+class it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.character_cards.PlayCharacterCardReq {
+}
+class it.polimi.ingsw.controller.communication_protocol.server_responses.LobbiesStatusRes {
+}
+
+left to right direction
+
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.PlayedApprenticeCardEvent
+Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.IllegalApprenticeCardException
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.LobbyFullException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.BagTokenToCardEvent
+it.polimi.ingsw.model.game_event.GameEventReceiver <|-- it.polimi.ingsw.model.game_event.GameEventHandler
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.character_cards.PlayCharacterCardCommand
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.MoveToEntranceHall
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card8
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.game_event.GameEvent
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card7
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToStudyHallReq
+Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.AlreadyPlayedCardException
+it.polimi.ingsw.client.frontend.gui.screen_controllers.Initializable <|.. it.polimi.ingsw.client.frontend.gui.screen_controllers.MainGameScreenController
+it.polimi.ingsw.model.game_event.GameEventCreator <|.. it.polimi.ingsw.model.ModelEventCreator
+it.polimi.ingsw.model.game_event.GameEventHandler <|.. it.polimi.ingsw.client.frontend.command_line.game_prompt.CLIEventHandler
+it.polimi.ingsw.client.backend.Connector <|-- it.polimi.ingsw.client.backend.DefaultConnector
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateGame
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.InvalidArgsException
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveMotherNatureReq
+it.polimi.ingsw.controller.server.welcome_server.Server <|-- it.polimi.ingsw.controller.server.welcome_server.ConcreteServer
+it.polimi.ingsw.custom_json_builder.Gsonable <|.. it.polimi.ingsw.custom_json_builder.GsonablePrototype
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.GameOverState
+it.polimi.ingsw.controller.communication_protocol.ClientAcceptor <|.. it.polimi.ingsw.client.frontend.gui.GUIAcceptor
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ErrorRes
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.BagToCloudEvent
+RuntimeException <|-- it.polimi.ingsw.controller.exceptions.InvalidCommandException
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.controller.communication_protocol.ClientRequest
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CommandFailedEvent
+javafx.application.Application <|-- it.polimi.ingsw.client.frontend.gui.MainWindow
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.client.backend.ClientPingSender
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.PositiveAmountException
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.cardhandler.CardHandler
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.cardhandler.CardHandler
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateStandBy
+it.polimi.ingsw.controller.communication_protocol.ClientAcceptor <|.. it.polimi.ingsw.client.frontend.PromptSelector
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TokenToIslandEvent
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ServerWelcomeRes
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TowersToIslandEvent
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.islands.IslandChain
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.islands.IslandChain
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.PrepareForNextTurn
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyStandbyRes
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.controller.communication_protocol.ServerResponse
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.character_cards.CharacterCard
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.character_cards.CharacterCard
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.NewStateGameEvent
+it.polimi.ingsw.controller.ping_protocol.TimeBomb <|-- it.polimi.ingsw.controller.server.connection.ServerPingTimer
+Exception <|-- it.polimi.ingsw.model.dashboard.exceptions.OutOfBoundIntegerCardException
+it.polimi.ingsw.controller.server.lobby.ILobby <|.. it.polimi.ingsw.controller.server.lobby.Lobby
+java.util.ArrayList <|-- it.polimi.ingsw.model.custom_data_structures.MagicList
+RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.ConflictingTowersException
+Runnable <|.. it.polimi.ingsw.client.frontend.command_line.CommandLineInterface
+javafx.fxml.Initializable <|.. it.polimi.ingsw.client.frontend.gui.screen_controllers.ChooseMagiciansScreenController
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CCDeActivated
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.SameNameException
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.NameAlreadyUsedException
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card9
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.LeaveReq
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.DisconnectedRes
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.MergedIslandsEvent
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Cloud
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PickCloudReq
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.ServerPing
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.cardhandler.PlayerCards
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CloudToEntranceHallEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TokenToStudyHallEvent
+it.polimi.ingsw.client.frontend.ClientOutInterface <|.. it.polimi.ingsw.client.frontend.command_line.CLIScreen
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToStudyHallEvent
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeAmountException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.TowersToDashBoardEvent
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card6
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveToStudyHall
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.MoveMotherNatureEvent
+RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedServerConnectionException
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.MoveMotherNatureState
+it.polimi.ingsw.controller.server.lobby.Lobby <|-- it.polimi.ingsw.controller.server.lobby.ConcreteLobby
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card2
+it.polimi.ingsw.model.game_event.GameEventHandler <|.. it.polimi.ingsw.client.frontend.gui.GUIGameEventAcceptor
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card11
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Professors
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Professors
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card1
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.dashboard.DashBoard
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.dashboard.DashBoard
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.PlayApprenticeCardReq
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.PlayApprenticeCardState
+Exception <|-- it.polimi.ingsw.controller.exceptions.ReloadGameException
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.MoveToIslandReq
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.EmptyException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardTokenToIslandEvent
+Runnable <|.. it.polimi.ingsw.controller.server.connection.Connection
+it.polimi.ingsw.controller.communication_protocol.ServerAcceptor <|.. it.polimi.ingsw.controller.server.connection.Connection
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.CreateLobbyReq
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CurrentPlayerChangedGameEvent
+javafx.fxml.Initializable <|.. it.polimi.ingsw.client.frontend.gui.screen_controllers.CreateNewGameScreenController
+RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedClientConnectionException
+it.polimi.ingsw.controller.server.connection.Connection <|-- it.polimi.ingsw.controller.server.connection.ConcreteConnection
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.PlaceTokensState
+it.polimi.ingsw.model.state.State <|-- it.polimi.ingsw.model.state.ActionPhaseState
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveToIsland
+it.polimi.ingsw.model.interfaces.Visitable <|.. it.polimi.ingsw.model.Game
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Game
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.EntranceHallToCardEvent
+it.polimi.ingsw.controller.ping_protocol.TimeBomb <|-- it.polimi.ingsw.client.backend.ClientPingTimer
+RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.NoneTowerException
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.PingReq
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.interfaces.Visitable
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.GameIsOverEvent
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.MissingProfessorException
+it.polimi.ingsw.custom_json_builder.JsonDeserializer <|.. it.polimi.ingsw.custom_json_builder.GsonDeserialize
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CCActivatedEvent
+it.polimi.ingsw.controller.server.Service <|-- it.polimi.ingsw.controller.server.lobby.ILobby
+Runnable <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+it.polimi.ingsw.controller.server.Service <|.. it.polimi.ingsw.controller.server.welcome_server.Server
+RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.MissingMotherNatureException
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.CoinsChangedEvent
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.character_cards.CardToEntranceHallEvent
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbyJoinedRes
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.ProfessorChangedEvent
+it.polimi.ingsw.model.character_cards.CharacterCard <|-- it.polimi.ingsw.model.character_cards.Card4
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.controller.server.connection.ServerPingSender
+it.polimi.ingsw.model.game_event.GameEventReceiver <|.. it.polimi.ingsw.controller.utility.EventBuffer
+it.polimi.ingsw.model.game_event.GameEvent <|.. it.polimi.ingsw.model.game_event.game_events.GameStartedEvent
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.game_event.game_events.GameStartedEvent
+it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyState <|-- it.polimi.ingsw.controller.server.lobby.lobby_state.LobbyStateNoGame
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PickCloud
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.FillClouds
+it.polimi.ingsw.controller.exceptions.ServerException <|-- it.polimi.ingsw.controller.exceptions.NonExistentGameException
+RuntimeException <|-- it.polimi.ingsw.model.islands.exceptions.GameShouldBeOverException
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.GameStatusRes
+RuntimeException <|-- it.polimi.ingsw.controller.exceptions.FailedServerSocketCreationException
+it.polimi.ingsw.model.visitor.VisitorCommand <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand
+it.polimi.ingsw.custom_json_builder.Gsonable <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand
+Exception <|-- it.polimi.ingsw.controller.exceptions.ServerException
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.PlayApprenticeCard
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.NegativeInputException
+RuntimeException <|-- it.polimi.ingsw.model.custom_data_structures.exceptions.ChoosingCardException
+it.polimi.ingsw.controller.ping_protocol.RegularExecutor <|-- it.polimi.ingsw.controller.ping_protocol.TimeBomb
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.custom_data_structures.Team
+javafx.fxml.Initializable <|.. it.polimi.ingsw.client.frontend.gui.screen_controllers.JoinLobbyScreenController
+java.util.ArrayList <|-- it.polimi.ingsw.model.custom_data_structures.CircularList
+it.polimi.ingsw.model.state.ActionPhaseState <|-- it.polimi.ingsw.model.state.PickACloudState
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.JoinLobbyReq
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.base_commands.PrepareForNextRound
+it.polimi.ingsw.model.visitor.player_visitor_command.PlayerVisitorCommand <|.. it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.visitor.player_visitor_command.MoveMotherNature
+it.polimi.ingsw.controller.data_transfer_objects.Simplifiable <|.. it.polimi.ingsw.model.Board
+it.polimi.ingsw.model.ModelEventCreator <|-- it.polimi.ingsw.model.Board
+it.polimi.ingsw.model.visitor.VisitorCommand <|.. it.polimi.ingsw.model.visitor.serialize_command.LoadGame
+it.polimi.ingsw.custom_json_builder.GsonablePrototype <|-- it.polimi.ingsw.model.state.State
+it.polimi.ingsw.controller.communication_protocol.ClientRequest <|-- it.polimi.ingsw.controller.communication_protocol.client_requests.game_commands.character_cards.PlayCharacterCardReq
+it.polimi.ingsw.controller.communication_protocol.ServerResponse <|-- it.polimi.ingsw.controller.communication_protocol.server_responses.LobbiesStatusRes
+@enduml

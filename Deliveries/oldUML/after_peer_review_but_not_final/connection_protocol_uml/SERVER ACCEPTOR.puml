@@ -1,0 +1,17 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+interface it.polimi.ingsw.controller.communication_protocol.ServerAcceptor {
+~ void accept(ClientRequest)
+~ void createLobby(String,int,TypeOfGame)
+~ void leave()
+~ void joinLobby(String,String)
+~ void playApprenticeCard(int)
+~ void playCharacterCard(String,TokenEnum,int,Map<TokenEnum,Integer>,Map<TokenEnum,Integer>)
+~ void moveToStudyHall(TokenEnum)
+~ void moveToIsland(TokenEnum,int)
+~ void moveMotherNature(int)
+~ void pickCloud(int)
+~ void ping()
+}
+@enduml

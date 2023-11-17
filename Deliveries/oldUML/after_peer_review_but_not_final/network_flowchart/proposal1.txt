@@ -1,0 +1,34 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include skin.puml
+
+
+class Package {
+-gameID : String
+-content : Object
+
++getGameID() : String
++getContent() : Object
+}
+class Server {
+    -buffer : Queue<Package>
+    -socket : List<Socket>
+    -lobby : Lobby
+    -gameRepo : GameRepo
+}
+interface Socket
+interface Lobby
+class GameRepo
+abstract class State
+interface ServerCLI
+
+ServerCLI --o Server
+Server o-- Socket
+Server o-- Lobby
+Server *-- GameRepo
+GameRepo o-- State
+Server --> Package : uses
+
+
+
+@enduml

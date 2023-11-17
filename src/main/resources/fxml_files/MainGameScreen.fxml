@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../css_files/MainGameCSS.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.frontend.gui.screen_controllers.MainGameScreenController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" opacity="0.22" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/backgrounds/Islands_Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="myDashboardImage" fitHeight="283.0" fitWidth="650.0" layoutX="1270.0" layoutY="797.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/DashBoard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="650.0" layoutX="1270.0" layoutY="610.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/scroll.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="PlayerTurnIndicator" alignment="CENTER" contentDisplay="CENTER" layoutX="1300.0" layoutY="640.0" prefWidth="600.0" text="It is your turn " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="EntranceHall" layoutX="1290.0" layoutY="823.0" prefHeight="231.0" prefWidth="76.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="59.0" minWidth="10.0" prefWidth="45.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="52.0" minWidth="10.0" prefWidth="45.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="EH0" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="EH1" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="EH2" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fx:id="EH3" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fx:id="EH4" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ImageView fx:id="EH5" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+            <ImageView fx:id="EH6" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ImageView fx:id="EH7" fitHeight="34.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
+            <ImageView fx:id="EH8" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#EntranceHallClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="GreenStudyHall" layoutX="1387.0" layoutY="832.0" onMouseClicked="#StudyHallClicked" prefHeight="30.0" prefWidth="316.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="102.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="0.0" prefWidth="102.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="GSH0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="GSH1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="GSH2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="GSH3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="GSH4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="GSH5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="GSH6" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fx:id="GSH7" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fx:id="GSH8" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fx:id="GSH9" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="RedStudyHall" layoutX="1387.0" layoutY="878.0" onMouseClicked="#StudyHallClicked" prefHeight="30.0" prefWidth="316.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="102.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="0.0" prefWidth="102.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="RSH0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="RSH1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="RSH2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="RSH3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="RSH4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="RSH5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="RSH6" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fx:id="RSH7" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fx:id="RSH8" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fx:id="RSH9" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="YellowStudyHall" layoutX="1387.0" layoutY="924.0" onMouseClicked="#StudyHallClicked" prefHeight="30.0" prefWidth="316.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="102.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="0.0" prefWidth="102.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="YSH0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="YSH1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="YSH2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="YSH3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="YSH4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="YSH5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="YSH6" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fx:id="YSH7" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fx:id="YSH8" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fx:id="YSH9" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="PinkStudyHall" layoutX="1387.0" layoutY="972.0" onMouseClicked="#StudyHallClicked" prefHeight="30.0" prefWidth="316.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="102.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="0.0" prefWidth="102.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="PSH0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="PSH1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="PSH2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="PSH3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="PSH4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="PSH5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="PSH6" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fx:id="PSH7" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fx:id="PSH8" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fx:id="PSH9" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="BlueStudyHall" layoutX="1387.0" layoutY="1015.0" onMouseClicked="#StudyHallClicked" prefHeight="30.0" prefWidth="316.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="102.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="0.0" prefWidth="102.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="BSH0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="BSH1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="BSH2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="BSH3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="BSH4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="BSH5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="BSH6" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+            <ImageView fx:id="BSH7" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+            <ImageView fx:id="BSH8" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+            <ImageView fx:id="BSH9" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="ProfessorHall" layoutX="1727.0" layoutY="823.0" prefHeight="231.0" prefWidth="37.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="PrH0" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="PrH1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="PrH2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fx:id="PrH3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+            <ImageView fx:id="PrH4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="TowerHall" layoutX="1800.0" layoutY="848.0" prefHeight="195.0" prefWidth="95.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="TH0" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="TH1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="TH2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="TH3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fx:id="TH4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fx:id="TH5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ImageView fx:id="TH6" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+            <ImageView fx:id="TH7" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ImageView fx:id="TH8" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <HBox fx:id="CharacterCardsBox" layoutX="365.0" layoutY="630.0" prefHeight="231.0" prefWidth="486.0">
+         <children>
+            <StackPane onMouseClicked="#CharacterCardClicked" onMouseEntered="#CharacterCardEntered" onMouseExited="#CharacterCardExited">
+               <children>
+                  <ImageView fx:id="CharacterCardZero" fitHeight="166.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="CharacterCardZeroCoin" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT" />
+               </children>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </StackPane>
+            <StackPane onMouseClicked="#CharacterCardClicked" onMouseEntered="#CharacterCardEntered" onMouseExited="#CharacterCardExited">
+               <children>
+                  <ImageView fx:id="CharacterCardOne" fitHeight="166.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="CharacterCardOneCoin" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT" />
+               </children>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </StackPane>
+            <StackPane onMouseClicked="#CharacterCardClicked" onMouseEntered="#CharacterCardEntered" onMouseExited="#CharacterCardExited">
+               <children>
+                  <ImageView fx:id="CharacterCardTwo" fitHeight="166.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="CharacterCardTwoCoin" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT" />
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+      <GridPane fx:id="CloudsGrid" layoutX="422.0" layoutY="314.0" prefHeight="300.0" prefWidth="300.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane fx:id="CStackPaneThree" onMouseClicked="#CloudClicked" onMouseEntered="#CloudMouseEntered" onMouseExited="#CloudMouseExited" prefHeight="150.0" prefWidth="150.0">
+               <children>
+                  <ImageView fx:id="CloudThree" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/clouds/cloud_card.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="TokenZeroCloudThree" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenOneCloudThree" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenTwoCloudThree" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" right="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane fx:id="CStackPaneTwo" onMouseClicked="#CloudClicked" onMouseEntered="#CloudMouseEntered" onMouseExited="#CloudMouseExited" prefHeight="150.0" prefWidth="150.0" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fx:id="CloudTwo" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/clouds/cloud_card.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="TokenZeroCloudTwo" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenOneCloudTwo" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenTwoCloudTwo" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" right="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenThreeCloudTwo" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" left="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane fx:id="CStackPaneOne" onMouseClicked="#CloudClicked" onMouseEntered="#CloudMouseEntered" onMouseExited="#CloudMouseExited" prefHeight="150.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="CloudOne" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/clouds/cloud_card.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="TokenZeroCloudOne" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenOneCloudOne" fitHeight="28.0" fitWidth="28.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenTwoCloudOne" fitHeight="28.0" fitWidth="28.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" right="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenThreeCloudOne" fitHeight="28.0" fitWidth="28.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" left="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane fx:id="CStackPaneZero" onMouseClicked="#CloudClicked" onMouseEntered="#CloudMouseEntered" onMouseExited="#CloudMouseExited" prefHeight="150.0" prefWidth="150.0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="CloudZero" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/clouds/cloud_card.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="TokenZeroCloudZero" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenOneCloudZero" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenTwoCloudZero" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" right="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="TokenThreeCloudZero" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="40.0" left="40.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <Label fx:id="CoinLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1221.0" layoutY="808.0" prefHeight="30.0" prefWidth="50.0" text="2 x" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <ImageView fx:id="CoinImage" fitHeight="50.0" fitWidth="50.0" layoutX="1271.0" layoutY="798.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Coin.png" />
+         </image>
+      </ImageView>
+      <StackPane fx:id="IStackPaneZero" layoutX="680.0" layoutY="137.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandZero" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="MNZero" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerZero" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I0GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I0RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I0YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="56.0" maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I0PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I0BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel0" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneOne" layoutX="844.0" layoutY="279.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandOne" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island2.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNOne" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerOne" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I1GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I1RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I1YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I1PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I1BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel1" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneTwo" layoutX="904.0" layoutY="494.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandTwo" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island3.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNTwo" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerTwo" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I2GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I2RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I2YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I2PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I2BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel2" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneThree" layoutX="843.0" layoutY="693.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandThree" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island1.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNThree" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerThree" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I3GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I3RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I3YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I3PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I3BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel3" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneFour" layoutX="691.0" layoutY="835.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandFour" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island2.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNFour" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerFour" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I4GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I4RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I4YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I4PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I4BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel4" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneFive" layoutX="470.0" layoutY="900.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandFive" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island3.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNFive" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerFive" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I5GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I5RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I5YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I5PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I5BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel5" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneSix" layoutX="261.0" layoutY="833.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandSix" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island1.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNSix" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerSix" fitHeight="40.0" fitWidth="40.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I6GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I6RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I6YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I6PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I6BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel6" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneSeven" layoutX="132.0" layoutY="693.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandSeven" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island2.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNSeven" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerSeven" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I7GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I7RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I7YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I7PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I7BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel7" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneEight" layoutX="58.0" layoutY="503.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandEight" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island3.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNEight" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerEight" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I8GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I8RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I8YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I8PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I8BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel8" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneNine" layoutX="129.0" layoutY="288.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandNine" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island1.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNNine" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerNine" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I9GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I9RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I9YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I9PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I9BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel9" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneTen" layoutX="267.0" layoutY="129.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandTen" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island2.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNTen" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerTen" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I10GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I10RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I10YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I10PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I10BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel10" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane fx:id="IStackPaneEleven" layoutX="472.0" layoutY="35.0" onMouseClicked="#IslandClicked" onMouseEntered="#MouseEnteredIsland" onMouseExited="#MouseExitedIsland" prefHeight="150.0" prefWidth="148.0">
+         <children>
+            <ImageView fx:id="IslandEleven" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/islands/island3.png" />
+               </image></ImageView>
+            <ImageView fx:id="MNEleven" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="25.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="TowerEleven" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="35.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <GridPane maxHeight="110.0" maxWidth="90.0" prefHeight="92.0" prefWidth="90.0" StackPane.alignment="BOTTOM_LEFT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_red.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_yellow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I11GT" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="I11RT" layoutX="55.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="I11YT" layoutX="10.0" layoutY="12.0" text="15" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" />
+               </padding>
+            </GridPane>
+            <GridPane maxHeight="100.0" maxWidth="90.0" StackPane.alignment="BOTTOM_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_pink.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../resources/tokens_towers/student_blue.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="I11PT" text="15" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="I11BT" layoutX="55.0" layoutY="12.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <Label fx:id="IslandIndexLabel11" text="1" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <Label fx:id="DUsername0" layoutX="1250.0" layoutY="130.0" prefHeight="50.0" prefWidth="150.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="DUsername1" layoutX="1250.0" layoutY="305.0" prefHeight="50.0" prefWidth="150.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="DUsername2" layoutX="1250.0" layoutY="492.0" prefHeight="50.0" prefWidth="150.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <VBox layoutX="1423.0" layoutY="60.0">
+         <children>
+            <StackPane fx:id="DStackPane0" prefHeight="152.0" prefWidth="425.0">
+               <children>
+                  <ImageView fx:id="Player0DashboardImage" fitHeight="152.0" fitWidth="425.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/backgrounds/background-d.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="152.0" prefWidth="425.0">
+                     <children>
+                        <GridPane prefHeight="150.0" prefWidth="182.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fx:id="D0GreenEH" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D0RedEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D0YellowEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D0PinkEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D0BlueEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="GreenEHD0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedEHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowEHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkEHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueEHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="GreenSHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedSHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowSHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkSHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueSHD0" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="CoinsD0" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="TowersD0" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/Coin.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="TowerImageD0" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                           </children>
+                        </GridPane>
+                        <ImageView fx:id="PlayedACD0" fitHeight="115.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="15.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="DStackPane1" prefHeight="152.0" prefWidth="425.0">
+               <children>
+                  <ImageView fx:id="Player1DashboardImage" fitHeight="152.0" fitWidth="425.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/backgrounds/background-d.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="152.0" prefWidth="425.0">
+                     <children>
+                        <GridPane prefHeight="150.0" prefWidth="182.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <ImageView fx:id="D1GreenEH" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D1RedEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D1YellowEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D1PinkEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D1BlueEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="GreenEHD1" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedEHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowEHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkEHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueEHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="GreenSHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedSHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowSHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkSHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueSHD1" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="CoinsD1" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="TowersD1" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/Coin.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="TowerImageD1" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                           </children>
+                        </GridPane>
+                        <ImageView fx:id="PlayedACD1" fitHeight="115.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="15.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </StackPane>
+            <StackPane fx:id="DStackPane2" prefHeight="152.0" prefWidth="425.0">
+               <children>
+                  <ImageView fx:id="Player2DashboardImage" fitHeight="152.0" fitWidth="425.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/backgrounds/background-d.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="152.0" prefWidth="425.0">
+                     <children>
+                        <GridPane prefHeight="150.0" prefWidth="182.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <ImageView fx:id="D2GreenEH" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D2RedEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D2YellowEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D2PinkEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="D2BlueEH" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_green.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_red.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_yellow.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_pink.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../resources/tokens_towers/student_blue.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="GreenEHD2" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedEHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowEHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkEHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueEHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="GreenSHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="RedSHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="YellowSHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="PinkSHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="BlueSHD2" layoutX="10.0" layoutY="18.0" text="Label" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="CoinsD2" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="TowersD2" alignment="CENTER" prefHeight="32.0" prefWidth="58.0" text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <image>
+                                    <Image url="@../resources/Coin.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="TowerImageD2" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                           </children>
+                        </GridPane>
+                        <ImageView fx:id="PlayedACD2" fitHeight="115.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="15.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </StackPane>
+         </children>
+      </VBox>
+      <ImageView fx:id="ASC0" fitHeight="150.0" fitWidth="140.0" layoutX="1018.0" layoutY="839.0" onMouseClicked="#ASCsClicked" onMouseEntered="#ASCsEntered" onMouseExited="#ASCsExited" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ASC1" fitHeight="150.0" fitWidth="140.0" layoutX="1007.0" layoutY="910.0" onMouseClicked="#ASCsClicked" onMouseEntered="#ASCsEntered" onMouseExited="#ASCsExited" pickOnBounds="true" preserveRatio="true" rotate="-24.0" />
+      <ImageView fx:id="ASC2" fitHeight="150.0" fitWidth="140.0" layoutX="1083.0" layoutY="895.0" onMouseClicked="#ASCsClicked" onMouseEntered="#ASCsEntered" onMouseExited="#ASCsExited" pickOnBounds="true" preserveRatio="true" rotate="-14.0" />
+      <ImageView fx:id="ASC3" fitHeight="150.0" fitWidth="140.0" layoutX="1091.0" layoutY="852.0" onMouseClicked="#ASCsClicked" onMouseEntered="#ASCsEntered" onMouseExited="#ASCsExited" pickOnBounds="true" preserveRatio="true" rotate="21.0" />
+      <ImageView fx:id="PlayedASC" fitHeight="166.0" fitWidth="138.0" layoutX="1110.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane fx:id="ASCPane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <ImageView fx:id="PASC0" fitHeight="248.0" fitWidth="188.0" layoutX="320.0" layoutY="165.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC1" fitHeight="248.0" fitWidth="188.0" layoutX="600.0" layoutY="165.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC2" fitHeight="248.0" fitWidth="188.0" layoutX="880.0" layoutY="165.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC3" fitHeight="248.0" fitWidth="363.0" layoutX="1160.0" layoutY="165.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC4" fitHeight="248.0" fitWidth="188.0" layoutX="1440.0" layoutY="165.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC5" fitHeight="248.0" fitWidth="188.0" layoutX="320.0" layoutY="550.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC6" fitHeight="248.0" fitWidth="188.0" layoutX="603.0" layoutY="550.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC7" fitHeight="248.0" fitWidth="188.0" layoutX="883.0" layoutY="550.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant8.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC8" fitHeight="248.0" fitWidth="188.0" layoutX="1163.0" layoutY="550.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant9.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="PASC9" fitHeight="248.0" fitWidth="188.0" layoutX="1440.0" layoutY="550.0" onMouseClicked="#ASCPClicked" onMouseEntered="#ASCPEntered" onMouseExited="#ASCPExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/assistant_cards/FrontAssistant10.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ASCPCloseButton" layoutX="854.0" layoutY="904.0" mnemonicParsing="false" onAction="#PaneCloseButtonClicked" text="Close" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="Card1Pane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <Label layoutX="550.0" layoutY="230.0" prefHeight="50.0" prefWidth="446.0" text="The tokens in the card's collection:" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Card1Token0" fitHeight="30.0" fitWidth="30.0" layoutX="1063.0" layoutY="248.0" onMouseClicked="#Card1TokenClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card1Token1" fitHeight="30.0" fitWidth="30.0" layoutX="1133.0" layoutY="248.0" onMouseClicked="#Card1TokenClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card1Token2" fitHeight="30.0" fitWidth="30.0" layoutX="1203.0" layoutY="248.0" onMouseClicked="#Card1TokenClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card1Token3" fitHeight="30.0" fitWidth="30.0" layoutX="1283.0" layoutY="248.0" onMouseClicked="#Card1TokenClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="551.0" layoutY="366.0" prefHeight="50.0" prefWidth="600.0" text="Select the island" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="Card1ChoiceBox" layoutX="1222.0" layoutY="362.0" prefHeight="37.0" prefWidth="150.0" />
+            <Button fx:id="Card1ActivateButton" layoutX="736.0" layoutY="612.0" mnemonicParsing="false" onAction="#Card1ActivateButtonClicked" text="Activate" textFill="WHITE" />
+            <Button fx:id="Card1CloseButton" layoutX="1014.0" layoutY="612.0" mnemonicParsing="false" onAction="#PaneCloseButtonClicked" text="Close" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="Card7Pane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <Label layoutX="359.0" layoutY="105.0" prefHeight="50.0" prefWidth="467.0" text="The tokens in the card's collection" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Card7T0" fitHeight="30.0" fitWidth="30.0" layoutX="844.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7T1" fitHeight="30.0" fitWidth="30.0" layoutX="924.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7T2" fitHeight="30.0" fitWidth="30.0" layoutX="1004.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7T3" fitHeight="30.0" fitWidth="30.0" layoutX="1084.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7T4" fitHeight="30.0" fitWidth="30.0" layoutX="1174.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7T5" fitHeight="30.0" fitWidth="30.0" layoutX="1254.0" layoutY="115.0" onMouseClicked="#Card7TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="365.0" layoutY="194.0" prefHeight="50.0" prefWidth="467.0" text="Your Entrance Hall" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Card7EHT0" fitHeight="30.0" fitWidth="30.0" layoutX="683.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT1" fitHeight="30.0" fitWidth="30.0" layoutX="763.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT2" fitHeight="30.0" fitWidth="30.0" layoutX="843.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT3" fitHeight="30.0" fitWidth="30.0" layoutX="923.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT4" fitHeight="30.0" fitWidth="30.0" layoutX="1013.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT5" fitHeight="30.0" fitWidth="30.0" layoutX="1093.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT6" fitHeight="30.0" fitWidth="30.0" layoutX="1173.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT7" disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="1253.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card7EHT8" disable="true" fitHeight="30.0" fitWidth="30.0" layoutX="1333.0" layoutY="205.0" onMouseClicked="#Card7EHClicked" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Card7ActivateButton" layoutX="638.0" layoutY="575.0" mnemonicParsing="false" onAction="#Card7ActivateButtonClicked" text="Activate" textFill="WHITE" />
+            <Button fx:id="Card7CloseButton" layoutX="1038.0" layoutY="575.0" mnemonicParsing="false" onAction="#PaneCloseButtonClicked" text="Close" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="Card9Pane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <Label layoutX="594.0" layoutY="264.0" prefHeight="50.0" prefWidth="268.0" text="Choose the color:" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Card9Green" fitHeight="30.0" fitWidth="30.0" layoutX="886.0" layoutY="274.0" onMouseClicked="#Card9TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card9Red" fitHeight="30.0" fitWidth="30.0" layoutX="966.0" layoutY="274.0" onMouseClicked="#Card9TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_red.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card9Yellow" fitHeight="30.0" fitWidth="30.0" layoutX="1046.0" layoutY="274.0" onMouseClicked="#Card9TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_yellow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card9Pink" fitHeight="30.0" fitWidth="30.0" layoutX="1126.0" layoutY="274.0" onMouseClicked="#Card9TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_pink.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card9Blue" fitHeight="30.0" fitWidth="30.0" layoutX="1206.0" layoutY="274.0" onMouseClicked="#Card9TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_blue.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Card9CloseButton" layoutX="850.0" layoutY="428.0" mnemonicParsing="false" onAction="#PaneCloseButtonClicked" text="Close" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="Card11Pane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <Label layoutX="676.0" layoutY="294.0" text="The tokens in the card:" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Card11T0" fitHeight="30.0" fitWidth="30.0" layoutX="1018.0" layoutY="299.0" onMouseClicked="#Card11TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card11T1" fitHeight="30.0" fitWidth="30.0" layoutX="1098.0" layoutY="299.0" onMouseClicked="#Card11TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card11T2" fitHeight="30.0" fitWidth="30.0" layoutX="1178.0" layoutY="299.0" onMouseClicked="#Card11TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Card11T3" fitHeight="30.0" fitWidth="30.0" layoutX="1258.0" layoutY="299.0" onMouseClicked="#Card11TClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/tokens_towers/student_green.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Card11CloseButton" layoutX="886.0" layoutY="440.0" mnemonicParsing="false" onAction="#PaneCloseButtonClicked" text="Close" />
+         </children>
+      </Pane>
+      <Pane fx:id="LobbyStandByPane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <TilePane fx:id="LobbyStandByTilePane" layoutX="750.0" layoutY="250.0" prefHeight="500.0" prefWidth="500.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="500.0" text="Player's Status:" textAlignment="CENTER" textFill="WHITE" TilePane.alignment="CENTER">
+                     <TilePane.margin>
+                        <Insets bottom="30.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="LobbyStandByP0" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="500.0" text="Player0" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="LobbyStandByP1" alignment="CENTER" layoutX="10.0" layoutY="115.0" prefHeight="60.0" prefWidth="500.0" text="Player1" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="LobbyStandByP2" alignment="CENTER" layoutX="10.0" layoutY="115.0" prefHeight="60.0" prefWidth="500.0" text="Player2" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="LobbyStandByP3" alignment="CENTER" layoutX="10.0" layoutY="205.0" prefHeight="60.0" prefWidth="500.0" text="Player3" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </TilePane>
+         </children>
+      </Pane>
+      <Pane fx:id="GameIsOverPane" disable="true" opacity="0.0" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <Label fx:id="GameIsOverLabel" alignment="CENTER" layoutX="722.0" layoutY="444.0" prefHeight="163.0" prefWidth="520.0" text="Label">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#closeGame" onMouseEntered="#QuitIconEntered" onMouseExited="#QuitIconExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Quit_Icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
